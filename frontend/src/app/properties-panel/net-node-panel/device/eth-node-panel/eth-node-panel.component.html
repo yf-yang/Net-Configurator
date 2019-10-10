@@ -1,0 +1,203 @@
+<div class="clr-row">
+  <div class="clr-col-lg-7">
+    <h2 class="elementPropertyValue elementLabel">{{ element.label }}</h2>
+  </div>
+  <div class="clr-col-lg-5 text-right">
+    <button class="btn btn-icon btn-link" (click)="openEditNodeDialog(element)">
+      <clr-icon shape="pencil" class="is-solid"></clr-icon>
+    </button>
+    <button class="btn btn-icon btn-link" (click)="removeElement()">
+      <clr-icon shape="trash" class="is-solid"></clr-icon>
+    </button>
+  </div>
+</div>
+
+<div class="clr-row error-list" *ngIf="element.isValidationError()">
+  <div class="clr-col-lg-12">
+    <div class="clr-row flex-align-center error-title-wrap">
+      <div class="clr-col-lg-1">
+        <img src="/assets/images/error-standard-line.svg" width="34" height="34" alt="icon">
+      </div>
+      <div class="clr-col-lg-11 error-title" [ngPlural]="element.errorsList.length">
+        <ng-template ngPluralCase="=1">
+          1 validation error. Try fixing the issue and validate again.
+        </ng-template>
+        <ng-template ngPluralCase="other">
+          {{ element.errorsList.length }} validation errors. Try fixing the issues and validate again.
+        </ng-template>
+      </div>
+    </div>
+    <hr>
+    <div class="clr-row" *ngFor="let error of element.errorsList">
+      <div class="clr-col-lg-12 error-item">{{ error }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="clr-row">
+  <div class="elementIcon clr-col-lg-4 relative">
+    <img *ngIf="isDEVICE(element.icon)" alt="icon" class="toolbar-item-icon" src="/assets/images/device/device.svg" width="73" height="73">
+    <img *ngIf="!isDEVICE(element.icon)" alt="icon" class="toolbar-item-icon"
+      src=" {{ element.isValidationError() ? getIcon(element.icon) : element.icon }}" width="73" height="73">
+    <span class="prop-panel-device-label">
+      {{ isDEVICE(element.icon) ? element.label.charAt(0) : '' }}
+    </span>
+  </div>
+
+  <div class="elementInfo column clr-col-lg-8">
+    <div class="clr-row">
+      <div>
+        <span>
+          <span class="elementPropertyName">Type: </span>
+          <span class="elementPropertyValue">{{ element.category }}</span><br>
+        </span>
+        <span class="elementPropertyName">ID: </span>
+        <span class="elementPropertyValue">{{ element.id | textShorten:15 }}</span><br>
+        <span>
+          <span class="elementPropertyName">IP: </span>
+          <span class="elementPropertyValue">{{ element.IP }}</span><br>
+          <span class="elementPropertyName">MAC: </span>
+          <span class="elementPropertyValue">{{ element.MAC }}</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-title-toolbox
+  *ngIf="element.ports.length"
+  [title]="'Ports'"
+  [addProperty]=""
+  [editProperty]="element"
+  [showAdd]="false"
+  [showEdit]="false"
+  [showDelete]="false"
+  [active]="true">
+</app-title-toolbox>
+<div *ngIf="element.ports.length">
+  <clr-datagrid>
+    <clr-dg-column>Port</clr-dg-column>
+    <clr-dg-column>Node</clr-dg-column>
+
+    <clr-dg-row *clrDgItems="let port of element.ports"
+      (mouseover)="onPortHover(port.getNodeId(), port.getLinkId())"
+      (mouseout)="onPortOut()">
+      <clr-dg-cell>{{port.id}}</clr-dg-cell>
+      <clr-dg-cell>{{port.getNodeLabel()}}</clr-dg-cell>
+    </clr-dg-row>
+  </clr-datagrid>
+</div>
+
+<clr-tabs>
+  <clr-tab>
+    <button clrTabLink>Transmitted</button>
+    <clr-tab-content *clrIfActive>
+      <app-title-toolbox
+        [title]="'IP Messages'"
+        [addProperty]="true"
+        [editProperty]="selectedMessages[0]"
+        [editDialog]="messageDialog"
+        [showAdd]="true"
+        [showEdit]="true"
+        [showDelete]="true"
+        [active]="true"
+        [disabledED]="!isSingleMessage()">
+      </app-title-toolbox>
+
+      <div class="messages">
+        <clr-datagrid [(clrDgSelected)]="selectedMessages"
+                      [clrDgRowSelection]="true"
+                      (clrDgSelectedChange)="onMessageClick()">
+
+          <clr-dg-column [clrDgField]="'name'">Name</clr-dg-column>
+          <clr-dg-column [clrDgField]="'bandwidth'">Bandwidth</clr-dg-column>
+          <clr-dg-column [clrDgField]="'destination.port'">Port</clr-dg-column>
+          <clr-dg-column [clrDgField]="'destination.address_method'">Address Method</clr-dg-column>
+
+          <clr-dg-row *clrDgItems="let message of element.ipMessages"
+                      [clrDgItem]="message"
+                      (mouseover)="onMessageHover(message.getDestinationIds(), routes[message.id])"
+                      (mouseout)="onMessageOut()"
+                      [ngClass]="{'dg-row-error': message.isValidationError()}">
+            <clr-dg-cell>{{message.name | textShorten:10}}</clr-dg-cell>
+            <clr-dg-cell>{{message.bandwidth | bandwidth}}</clr-dg-cell>
+            <clr-dg-cell>{{message.destination.port}}</clr-dg-cell>
+            <clr-dg-cell>{{message.destination.address_method}}</clr-dg-cell>
+          </clr-dg-row>
+          <clr-dg-footer>Bandwidth: {{getSelectedBw() | bandwidth}} / {{getTotalBw(element.ipMessages) | bandwidth}}</clr-dg-footer>
+        </clr-datagrid>
+      </div>
+
+      <div class="destinations" *ngIf="selectedMessages && selectedMessages.length > 0">
+        <app-title-toolbox
+          [title]="'Destinations'"
+          [active]="true">
+        </app-title-toolbox>
+        <clr-datagrid>
+          <clr-dg-column [clrDgField]="'label'">Name</clr-dg-column>
+          <clr-dg-column [clrDgField]="'IP'">IP</clr-dg-column>
+          <clr-dg-column [clrDgField]="'MAC'">MAC</clr-dg-column>
+          <clr-dg-row *clrDgItems="let node of messagesDestinations">
+            <clr-dg-cell>{{node.label}}</clr-dg-cell>
+            <clr-dg-cell>{{node.IP}}</clr-dg-cell>
+            <clr-dg-cell>{{node.MAC}}</clr-dg-cell>
+          </clr-dg-row>
+        </clr-datagrid>
+      </div>
+    </clr-tab-content>
+  </clr-tab>
+
+
+  <clr-tab>
+    <button clrTabLink>Received</button>
+    <clr-tab-content *clrIfActive>
+      <app-title-toolbox
+        [title]="'IP Messages'"
+        [addProperty]="true"
+        [editProperty]="selectedMessages[0]"
+        [editDialog]="messageDialog"
+        [showAdd]="false"
+        [showEdit]="false"
+        [showDelete]="false"
+        [active]="true"
+        [disabledED]="!isSingleMessage()">
+      </app-title-toolbox>
+
+      <div class="messages">
+      <clr-datagrid [(clrDgSelected)]="selectedMessages"
+                    [clrDgRowSelection]="true"
+                    (clrDgSelectedChange)="onMessageClick()">
+
+        <clr-dg-column [clrDgField]="'name'">Name</clr-dg-column>
+        <clr-dg-column [clrDgField]="'srcNode.label'">Source</clr-dg-column>
+        <clr-dg-column [clrDgField]="'bandwidth'">Bandwidth</clr-dg-column>
+        <clr-dg-column [clrDgField]="'destination.port'">Port</clr-dg-column>
+        <clr-dg-column [clrDgField]="'destination.address_method'">Address Method</clr-dg-column>
+
+        <clr-dg-row *clrDgItems="let message of dstIpMessages"
+                    [clrDgItem]="message"
+                    (mouseover)="onMessageHover([message.getSourceId()], routes[message.id])"
+                    (mouseout)="onMessageOut()"
+                    [ngClass]="{'dg-row-error': message.isValidationError()}">
+          <clr-dg-cell>{{message.name | textShorten:10}}</clr-dg-cell>
+          <clr-dg-cell>{{message.srcNode ? message.srcNode.label : ''}}</clr-dg-cell>
+          <clr-dg-cell>{{message.bandwidth | bandwidth}}</clr-dg-cell>
+          <clr-dg-cell>{{message.destination.port}}</clr-dg-cell>
+          <clr-dg-cell>{{message.destination.address_method}}</clr-dg-cell>
+        </clr-dg-row>
+        <clr-dg-footer>Bandwidth: {{getSelectedBw() | bandwidth}} / {{getTotalBw(dstIpMessages) | bandwidth}}</clr-dg-footer>
+      </clr-datagrid>
+      </div>
+    </clr-tab-content>
+  </clr-tab>
+</clr-tabs>
+
+<app-edit-message-dialog
+  [nodeId]="element.id"
+  [item]="selectedMessages[0]"
+  [itemsArray]="element.ipMessages"
+  #messageDialog
+  (itemRemoved)="onMessageRemoved()"
+  (itemEdited)="onMessageEdited()"
+  (itemAdded)="onMessageAdded($event)">
+</app-edit-message-dialog>

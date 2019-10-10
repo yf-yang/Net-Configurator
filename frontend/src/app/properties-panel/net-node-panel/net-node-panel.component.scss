@@ -1,0 +1,26 @@
+// .messages, .signals {
+//   height: 250px;
+// }
+
+// .signals.empty {
+//   height: 20px;
+// }
+
+// .receivers {
+//   height: 200px;
+// }
+
+.prop-panel-device-label {
+  position: absolute;
+  top: 25px;
+  left: 60px;
+  text-align: center;
+  font-size: 20px;
+  color: #ffffff;
+  pointer-events: none;
+  text-transform: uppercase;
+}
+
+.elementId {
+  padding-left: 20px;
+}

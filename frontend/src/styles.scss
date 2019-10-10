@@ -1,0 +1,227 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: CiscoSansTTThin;
+  src: url('./assets/fonts/cisco/CiscoSansTTThin.woff') format('woff'),
+       url('./assets/fonts/cisco/CiscoSansTTThin.woff2') format('woff2'),
+       url('./assets/fonts/cisco/CiscoSansTTThin.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: CiscoSans-Thin;
+  src: url('./assets/fonts/cisco/CiscoSansTTThin.woff') format('woff'),
+       url('./assets/fonts/cisco/CiscoSansTTThin.woff2') format('woff2'),
+       url('./assets/fonts/cisco/CiscoSansTTThin.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: CiscoSansTTLight;
+  src: url('./assets/fonts/cisco/CiscoSansTTLight.woff') format('woff'),
+       url('./assets/fonts/cisco/CiscoSansTTLight.woff2') format('woff2'),
+       url('./assets/fonts/cisco/CiscoSansTTLight.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: CiscoSansTTExtraLight;
+  src: url('./assets/fonts/cisco/CiscoSansTTExtraLight.woff') format('woff'),
+       url('./assets/fonts/cisco/CiscoSansTTExtraLight.woff2') format('woff2'),
+       url('./assets/fonts/cisco/CiscoSansTTExtraLight.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: CiscoSansTTRegular;
+  src: url('./assets/fonts/cisco/CiscoSansTTRegular.woff') format('woff'),
+       url('./assets/fonts/cisco/CiscoSansTTRegular.woff2') format('woff2'),
+       url('./assets/fonts/cisco/CiscoSansTTRegular.ttf') format('truetype');
+}
+
+// Clarity theme
+@import '../node_modules/@clr/ui/src/utils/dependencies.clarity';
+@import '../node_modules/@clr/ui/src/utils/theme.dark.clarity';
+@import './theme.scss';
+@import '../node_modules/@clr/ui/src/utils/components.clarity';
+
+// Topology
+@import './styles/topology.scss';
+
+// Toolbox (vertical-nav)
+@import './styles/toolbox.scss';
+
+// Notifications
+@import './styles/notifications.scss';
+
+// Datagrid
+@import './styles/datagrid.scss';
+
+.relative {
+  position: relative;
+}
+
+.fullheight {
+  height: 100%;
+}
+
+.btn {
+  border-width: 2px !important;
+  letter-spacing: 0 !important;
+  font-size: 17px !important;
+  border-radius: 20px !important;
+  text-transform: capitalize !important;
+  font-family: CiscoSansTTLight !important;
+  padding: 0 18px;
+}
+
+.btn:active {
+  box-shadow: none !important;
+}
+
+.btn:disabled {
+  opacity: 1 !important;
+}
+
+.btn-outline {
+  border-color: #0071AF !important;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+#prop-content .btn-link {
+  padding-left: 6px !important;
+  color: #0071AF;
+}
+
+.modal-title {
+  font-size: 28px !important;
+  color: #ffffff !important;
+  font-family: CiscoSansTTThin !important;
+}
+
+.modal-header .close clr-icon {
+  width: 35px !important;
+  height: 35px !important;
+  margin-top: -10px;
+}
+
+.modal-header .close:focus {
+  box-shadow: none !important;
+}
+
+input:focus {
+  outline: 0;
+}
+
+.edit-modal form label {
+  font-size: 17px !important;
+  color: #ffffff !important;
+}
+
+.edit-modal input {
+  color: #808080;
+  font-family: CiscoSansTTThin;
+}
+
+.edit-modal input:focus {
+  color: #ffffff;
+}
+
+.edit-modal .form-group label:first-child {
+  padding-left: 30px;
+  width: auto !important;
+}
+
+.edit-modal .form-group {
+  margin-bottom: 20px !important;
+  padding-left: 300px !important;
+}
+
+.modal-dialog {
+  width: 665px !important;
+}
+
+.edit-msg-modal .modal-dialog {
+  width: 36rem !important;
+}
+
+.modal-body {
+  overflow: visible !important;
+}
+
+.form-group .tooltip-content {
+  font-family: CiscoSansTTRegular !important;
+  font-size: 18px !important;
+  color: #FFFFFF !important;
+  letter-spacing: -0.12px !important;
+  width: 200px !important;
+  /* max-width: 300px !important; */
+  background-color: #E53030 !important;
+}
+
+.form-group .tooltip-content::before {
+  border-right-color: #E53030 !important;
+  border-top-color: #E53030 !important;
+}
+
+.form-group .tooltip-validation.invalid::before {
+  background-image: url('/assets/images/error-standard-line.svg') !important;
+  width: 19px !important;
+  height: 19px !important;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.tooltip-network {
+  font-family: CiscoSansTTRegular !important;
+  font-size: 18px !important;
+  color: #FFFFFF !important;
+  letter-spacing: -0.12px !important;
+  background-color: #E53030 !important;
+}
+
+.tooltip-network::before {
+  border-top-color: #E53030 !important;
+  border-left-color: #E53030 !important;
+}
+
+.main-container:not([class*=open-overflow-menu]):not([class*=open-hamburger-menu]) .clr-vertical-nav.is-collapsed .nav-icon {
+  margin-left: 8px !important;
+}
+
+.modal-body {
+  overflow-y: auto !important;
+}
+
+ul[role=tablist] {
+  margin-top: 20px;
+  box-shadow: none;
+}
+
+button[role=tab] {
+  border-radius: 0 !important;
+}
+
+.edit-msg-modal clr-select-container {
+  margin-top: 0 !important;
+}
+
+.collapsible-block {
+  transition: height 0.2s linear;
+  height: 0;
+}
+
+.toggle-switch input[type='checkbox']:checked + label::before {
+  border-color: #0171AD;
+  background-color: #0171AD;
+}
+
+.clr-wizard-stepnav-link {
+  color: #ffffff !important;
+  padding-left: 10px !important;
+}
+
+.clr-wizard-stepnav-list {
+  padding-right: 5px;
+}

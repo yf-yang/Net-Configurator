@@ -1,0 +1,54 @@
+<div class="main-container" (mouseup)="denyPropPanelResize()">
+  <div *ngIf="isWorking" id="main-progress-bar" class="progress loop"><progress></progress></div>
+  <header class="header">
+    <div class="branding">
+      <a href="#" class="nav-link">
+        <span class="title">Net Configurator</span>
+      </a>
+    </div>
+     <div class="header-actions dropdown-wrap">
+      <clr-dropdown>
+        <button class="nav-text" clrDropdownTrigger>
+          File
+          <clr-icon shape="caret down"></clr-icon>
+        </button>
+        <clr-dropdown-menu *clrIfOpen clrPosition="bottom">
+          <button type="button" class="dropdown-item" (click)="clearTopology()" clrDropdownItem>New</button>
+          <div class="dropdown-divider"></div>
+          <button type="button" class="dropdown-item" (click)="openModal('import', 'Import topology', 'Import')" clrDropdownItem>Import</button>
+          <button type="button" class="dropdown-item" (click)="openSaveModal()" clrDropdownItem>Save</button>
+        </clr-dropdown-menu>
+      </clr-dropdown>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-primary" (click)="validateTopology()">Validate</button>
+      <button class="btn btn-primary" (click)="generatePolicies()">Generate Policies</button>
+    </div>
+  </header>
+  <div class="content-container">
+      <app-sidepanel></app-sidepanel>
+    <div class="content-area" (mousemove)="setMouseEvent($event)">
+      <app-topology></app-topology>
+    </div>
+  </div>
+  <app-net-topology-import-component
+    [title]="modalTitle"
+    [buttonLabel]="modalButtonLabel"
+    [type]="modalType"
+    >
+  </app-net-topology-import-component>
+  <app-net-topology-data-save></app-net-topology-data-save>
+</div>
+
+<clr-modal [(clrModalOpen)]="splashScreenOpened" [clrModalClosable]="false" class="net-modal">
+  <div class="modal-body">
+    <h3 class="net-header">Net Configurator</h3>
+    <button class="btn btn-primary splash-screen-btn" (click)="splashScreenOpened = false; clearTopology()">Create topology</button><br>
+    <button class="btn btn-primary splash-screen-btn" (click)="splashScreenOpened = false; openModal('import', 'Import topology', 'Import')">Import topology</button><br>
+  </div>
+  <div class="modal-footer">
+  </div>
+</clr-modal>
+
+<app-edit-node-dialog></app-edit-node-dialog>
+<app-notification-dialog></app-notification-dialog>

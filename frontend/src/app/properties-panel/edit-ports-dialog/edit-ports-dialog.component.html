@@ -1,0 +1,25 @@
+<clr-modal [(clrModalOpen)]="isEditPropertiesDialogOpen" class="edit-modal">
+  <h3 class="modal-title">
+    <span class="title">
+      Edit bandwidth
+    </span>
+  </h3>
+  <div class="modal-body">
+    <form class="form" #nodeForm="ngForm">
+      <section class="form-block">
+        <div class="form-group" *ngFor="let port of ports; let i = index">
+            <label for="port-{{i}}">Port {{ i + 1 }}</label>
+            <div class="select">
+                <select type="number" id="port-{{i}}" [(ngModel)]="port.bandwidth" name="type-{{i}}">
+                    <option *ngFor="let bw of bwList" [ngValue]="bw.type">{{ bw.toString() }}</option>
+                </select>
+            </div>
+        </div>
+      </section>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-outline" (click)="dialogControl('close')">Cancel</button>
+    <button class="btn btn-primary" (click)="saveItem()">Save</button>
+  </div>
+</clr-modal>

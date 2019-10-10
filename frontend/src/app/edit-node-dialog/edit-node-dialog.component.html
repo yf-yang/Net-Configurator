@@ -1,0 +1,45 @@
+<clr-modal [(clrModalOpen)]="isEditNodeDialogOpen" class="edit-modal" *ngIf="editedNode">
+  <h3 class="modal-title">Edit Node</h3>
+  <div class="modal-body">
+    <form class="form" #nodeForm="ngForm">
+      <section class="form-block">
+        <div class="form-group">
+          <label for="label">Node Label</label>
+          <label for="label"
+                 aria-haspopup="true"
+                 role="tooltip"
+                 class="tooltip tooltip-validation tooltip-sm tooltip-top-left">
+            <input id="label" name="label" type="text" [(ngModel)]="editedNode.label">
+            <span class="tooltip-content">Required</span>
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="IP">Node IP Address</label>
+          <label for="IP"
+                 aria-haspopup="true"
+                 role="tooltip"
+                 class="tooltip tooltip-validation tooltip-sm tooltip-top-left"
+                 [ngClass]="{'invalid': !isValidIP()}">
+            <input id="IP" name="IP" type="text" [(ngModel)]="editedNode.IP">
+            <span class="tooltip-content">Must be in the format 255.255.255.255</span>
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="MAC">Node MAC Address</label>
+          <label for="MAC"
+                 aria-haspopup="true"
+                 role="tooltip"
+                 class="tooltip tooltip-validation tooltip-sm tooltip-top-left"
+                 [ngClass]="{'invalid': !isValidMAC()}">
+            <input id="MAC" name="MAC" type="text" [(ngModel)]="editedNode.MAC">
+            <span class="tooltip-content">Must be in the format aa:bb:cc:dd:ee:ff</span>
+          </label>
+        </div>
+      </section>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-outline" (click)="editNodeDialogService.closeEditNodeDialog()">Cancel</button>
+    <button class="btn btn-primary" (click)="onSubmit()" [disabled]="!isValidForm()">Save</button>
+  </div>
+</clr-modal>

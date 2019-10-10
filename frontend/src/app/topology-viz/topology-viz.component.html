@@ -1,0 +1,14 @@
+<div class="topologyContainer clr-col-xl-12 relative">
+    <svg #topology
+    (click)="checkSvgClick($event)">
+        <g class="content">
+            <g class="links"></g>
+            <g class="nodes"></g>
+        </g>
+    </svg>
+
+    <app-link-connection-dialog #linkConnectionDialog></app-link-connection-dialog>
+    <span *ngIf="isLoading" id="topo-spinner" class="spinner spinner-inverse">
+        Loading...
+    </span>
+</div>

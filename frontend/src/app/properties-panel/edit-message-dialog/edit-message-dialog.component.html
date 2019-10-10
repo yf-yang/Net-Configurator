@@ -1,0 +1,185 @@
+<clr-wizard *ngIf="isEditPropertiesDialogOpen"
+            [(clrWizardOpen)]="isEditPropertiesDialogOpen"
+            (clrWizardOnCancel)="dialogControl('close')"
+            (clrWizardOnFinish)="submitMethod === 'new' ? addMessage() : editItem(item, 'id', originalItemId, selectedNode, port)"
+            class="edit-modal edit-msg-modal"
+            #wizard>
+  <clr-wizard-title>Edit Message</clr-wizard-title>
+
+  <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+  <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+  <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+  <clr-wizard-button [type]="'finish'">
+    Finish
+  </clr-wizard-button>
+
+  <clr-wizard-page [clrWizardPageNextDisabled]="formPageOne.pristine || !formPageOne.valid">
+    <ng-template clrPageTitle>Basic Information</ng-template>
+    <form #formPageOne="ngForm">
+      <section class="form-block">
+        <div class="form-group">
+          <label for="name">Message Name</label>
+          <label for="name"
+                aria-haspopup="true"
+                role="tooltip"
+                class="tooltip tooltip-validation tooltip-sm tooltip-bottom-left"
+                [ngClass]="{'invalid': name.touched && !name.valid}">
+            <input id="name" name="name" type="text" [(ngModel)]="item.name" #name="ngModel" required>
+            <span class="tooltip-content">Required</span>
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="bandwidth">Message Bandwidth (MB)</label>
+          <label for="bandwidth"
+                aria-haspopup="true"
+                role="tooltip"
+                class="tooltip tooltip-validation tooltip-sm tooltip-top-left"
+                [ngClass]="{'invalid': bandwidth.touched && !bandwidth.valid}">
+            <input id="bandwidth" name="bandwidth" type="number" [(ngModel)]="item.bandwidth" #bandwidth="ngModel" required min="0">
+            <span class="tooltip-content">Required</span>
+          </label>
+        </div>
+        <div class="form-group">
+            <label for="port">Port</label>
+            <label for="port"
+                  aria-haspopup="true"
+                  role="tooltip"
+                  class="tooltip tooltip-validation tooltip-sm tooltip-top-left"
+                  [ngClass]="{'invalid': portInput.touched && !portInput.valid}">
+              <input id="port" name="portInput" type="number" [(ngModel)]="port" #portInput="ngModel" required min="1" max="65535">
+              <span class="tooltip-content">Required</span>
+            </label>
+          </div>
+        <div class="form-group">
+          <label for="address_method">Address Method</label>
+          <label for="address_method"
+                aria-haspopup="true"
+                role="tooltip"
+                class="tooltip tooltip-validation tooltip-sm tooltip-top-left">
+            <select clrSelect name="address_method" [(ngModel)]="addressMethod">
+              <option value="UNICAST">UNICAST</option>
+              <option value="MULTICAST">MULTICAST</option>
+            </select>
+            <span class="tooltip-content">Required</span>
+          </label>
+        </div>
+      </section>
+    </form>
+  </clr-wizard-page>
+  <clr-wizard-page *ngIf="shownMGroupTab"
+                   (clrWizardPageCustomButton)="mgCustomBtnClick($event)"
+                   [clrWizardPageNextDisabled]="formMGControl.pristine || !formMGControl.valid || (mgItems && mgItems.length === 0)"
+                   #mgCrudPage>
+    <ng-template clrPageTitle>Create Multicast Group</ng-template>
+    <ng-template clrPageButtons>
+      <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+      <clr-wizard-button [type]="'custom-previous'">Back</clr-wizard-button>
+      <clr-wizard-button [type]="'custom-next'">Next</clr-wizard-button>
+    </ng-template>
+    <form #formMGControl="ngForm">
+      <section class="form-block">
+        <div class="form-group">
+          <label for="group-ip">Group IP</label>
+          <label for="group-ip"
+                aria-haspopup="true"
+                role="tooltip"
+                class="tooltip tooltip-validation tooltip-sm tooltip-bottom-left"
+                [ngClass]="{'invalid': groupIp.touched && !groupIp.valid}">
+            <input id="group-ip" name="groupIp" type="text" [(ngModel)]="multicastGroupItem.IP" #groupIp="ngModel" required>
+            <span class="tooltip-content">Required</span>
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="group-mac">Group MAC</label>
+          <label for="group-mac"
+                aria-haspopup="true"
+                role="tooltip"
+                class="tooltip tooltip-validation tooltip-sm tooltip-top-left"
+                [ngClass]="{'invalid': groupMac.touched && !groupMac.valid}">
+            <input id="group-mac" name="groupMac" type="text" [(ngModel)]="multicastGroupItem.MAC" #groupMac="ngModel" required>
+            <span class="tooltip-content">Required</span>
+          </label>
+        </div>
+      </section>
+    </form>
+    <app-title-toolbox
+      [title]="'Destinations'"
+      [active]="true">
+    </app-title-toolbox>
+    <clr-datagrid [(clrDgSelected)]="mgItems" [clrDgRowSelection]="true">
+      <clr-dg-column [clrDgField]="'label'">Name</clr-dg-column>
+      <clr-dg-column [clrDgField]="'IP'">IP</clr-dg-column>
+      <clr-dg-column [clrDgField]="'MAC'">MAC</clr-dg-column>
+      <clr-dg-row *clrDgItems="let node of nodes" [clrDgItem]="node">
+        <clr-dg-cell>{{node.label}}</clr-dg-cell>
+        <clr-dg-cell>{{node.IP}}</clr-dg-cell>
+        <clr-dg-cell>{{node.MAC}}</clr-dg-cell>
+      </clr-dg-row>
+    </clr-datagrid>
+  </clr-wizard-page>
+  <clr-wizard-page *ngIf="!isUnicast()" #mgPage [clrWizardPageNextDisabled]="!selectedMGroup">
+      <ng-template clrPageTitle>Multicast Groups</ng-template>
+      <div class="clr-row flex-items-xs-middle title-datagrid">
+        <div class="clr-col-lg-8">
+          <h6 class="active">
+            Groups
+          </h6>
+        </div>
+        <div class="clr-col-lg-4">
+          <h6 class="toolbar-items-h6">
+            <div class="btn-group btn-primary btn-icon toolbar-items">
+              <button class="btn btn-link" (click)="showAddMGroupTab(true)">
+                <clr-icon shape="plus"></clr-icon>
+                <span class="clr-icon-title">Add</span>
+              </button>
+              <!-- <button class="btn btn-link" [disabled]="!selectedMGroup" (click)="showAddMGroupTab(true)">
+                <clr-icon shape="pencil" class="is-solid"></clr-icon>
+                <span class="clr-icon-title">Edit</span>
+              </button> -->
+              <button class="btn btn-link" [disabled]="!selectedMGroup" (click)="removeMulticastGroup()">
+                <clr-icon shape="trash" class="is-solid"></clr-icon>
+                <span class="clr-icon-title">Delete</span>
+              </button>
+            </div>
+          </h6>
+        </div>
+      </div>
+
+      <clr-datagrid [(clrDgSingleSelected)]="selectedMGroup" [clrDgRowSelection]="true" (clrDgSingleSelectedChange)="mgChanged($event)">
+        <clr-dg-column [clrDgField]="'IP'">IP</clr-dg-column>
+        <clr-dg-column [clrDgField]="'MAC'">MAC</clr-dg-column>
+        <clr-dg-row *clrDgItems="let mg of multicastGroups" [clrDgItem]="mg">
+          <clr-dg-cell>{{mg.IP}}</clr-dg-cell>
+          <clr-dg-cell>{{mg.MAC}}</clr-dg-cell>
+        </clr-dg-row>
+      </clr-datagrid>
+
+      <app-title-toolbox *ngIf="selectedMGroup"
+        [title]="'Destinations'"
+        [active]="true">
+      </app-title-toolbox>
+      <clr-datagrid *ngIf="selectedMGroup">
+        <clr-dg-column [clrDgField]="'label'">Name</clr-dg-column>
+        <clr-dg-column [clrDgField]="'IP'">IP</clr-dg-column>
+        <clr-dg-column [clrDgField]="'MAC'">MAC</clr-dg-column>
+        <clr-dg-row *clrDgItems="let node of mgNodes">
+          <clr-dg-cell>{{node.label}}</clr-dg-cell>
+          <clr-dg-cell>{{node.IP}}</clr-dg-cell>
+          <clr-dg-cell>{{node.MAC}}</clr-dg-cell>
+        </clr-dg-row>
+      </clr-datagrid>
+    </clr-wizard-page>
+  <clr-wizard-page *ngIf="isUnicast()" [clrWizardPageNextDisabled]="!selectedNode">
+    <ng-template clrPageTitle>Destination Node</ng-template>
+    <clr-datagrid [(clrDgSingleSelected)]="selectedNode" [clrDgRowSelection]="true">
+      <clr-dg-column [clrDgField]="'label'">Name</clr-dg-column>
+      <clr-dg-column [clrDgField]="'IP'">IP</clr-dg-column>
+      <clr-dg-column [clrDgField]="'MAC'">MAC</clr-dg-column>
+      <clr-dg-row *clrDgItems="let node of nodes" [clrDgItem]="node">
+        <clr-dg-cell>{{node.label}}</clr-dg-cell>
+        <clr-dg-cell>{{node.IP}}</clr-dg-cell>
+        <clr-dg-cell>{{node.MAC}}</clr-dg-cell>
+      </clr-dg-row>
+    </clr-datagrid>
+  </clr-wizard-page>
+</clr-wizard>

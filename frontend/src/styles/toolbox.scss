@@ -1,0 +1,41 @@
+.nav-group-trigger {
+  font-weight: normal !important;
+  height: 2rem !important;
+}
+
+#tb-link .nav-group-trigger, #tb-network-elements .nav-group-trigger {
+  border-top: 0.5px solid #808080 !important;
+}
+
+.clr-vertical-nav.is-collapsed .nav-menu-subtitle {
+  display: none;
+}
+
+.nav-content {
+  padding-top: 0 !important;
+  border-top: 0 !important;
+  padding-bottom: 30px;
+}
+
+.clr-vertical-nav .nav-group-text {
+  line-height: 38px !important;
+  padding-left: 10px !important;
+  font-size: 15px !important;
+  font-family: CiscoSansTTRegular;
+  text-shadow: rgba(128,128,128,0.5) 0 0 1px;
+  font-weight: 400 !important;
+}
+
+.clr-vertical-nav .nav-icon {
+  width: 20px !important;
+  height: 20px !important;
+  flex-basis: auto !important;
+}
+
+.clr-vertical-nav .nav-group-content:hover .nav-icon {
+  fill: #ffffff !important;
+}
+
+.clr-vertical-nav .ng-trigger.ng-animating clr-vertical-nav-group-children {
+  overflow: hidden !important;
+}

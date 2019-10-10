@@ -1,0 +1,5 @@
+<clr-vertical-nav *ngIf="isConnectionDialogOpen" id="portSelectionNav" [ngStyle]="{'left': posX + 'px', 'top': posY + 'px'}">
+    <a *ngFor="let port of ports"
+        clrVerticalNavLink
+        (click)="onSubmit(port.id)">{{ port.id }}: {{ port.portType }} ({{ port.bandwidth | bandwidth }})</a>
+</clr-vertical-nav>

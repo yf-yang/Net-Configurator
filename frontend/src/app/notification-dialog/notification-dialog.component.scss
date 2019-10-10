@@ -1,0 +1,40 @@
+.modal-body {
+    overflow-y:unset;
+    overflow-x:unset;
+}
+
+.btn-primary{
+    background: transparent;
+    border-color: #FFFF;
+    color:#FFFF;
+    border-radius: 20px;
+}
+
+.btn-primary:hover {
+
+    background: transparent;
+    color: #0071AF;
+}
+
+#notif .alert-item {
+    align-items: flex-start;
+    font-size: 17px;
+}
+
+.alert-text {
+    color: white !important;
+    font-family: CiscoSansTTRegular !important;
+    font-size: 18px !important;
+    margin-left: 10px !important;
+    line-height: 27px !important;
+}
+
+#compileBtn {
+    text-transform: none !important;
+    max-width: none !important;
+    margin-top: -5px !important;
+}
+
+#compileBtn:hover {
+    color: #ffffff;
+}

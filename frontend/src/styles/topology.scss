@@ -1,0 +1,106 @@
+svg .node {
+  cursor: pointer;
+  transition: opacity 0.2s linear;
+}
+
+svg .node-dragging, svg .link-dragging {
+  pointer-events: none;
+}
+
+svg .links {
+  cursor: pointer;
+}
+
+svg #portHighlight {
+  transition: opacity 0.2s linear;
+}
+
+svg .link {
+  fill: none;
+  transition: opacity, stroke-width, stroke 0.2s linear;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+svg .link-clickable {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 12px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+svg text {
+  transition: fill 0.2s linear;
+}
+
+svg .links .selected-link {
+  stroke:#3DE8E8;
+  stroke-width: 4px;
+}
+
+svg .highlighted-link {
+  stroke: #3DE8E8;
+  stroke-width: 4px;
+}
+
+svg .path-link {
+  stroke: #ffffff !important;
+  stroke-width: 4px;
+}
+
+svg .hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+svg .device-label {
+  fill: #ffffff;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+svg .dashed {
+  stroke-dasharray: 5;
+}
+
+svg .broken {
+  stroke-dasharray: 5;
+  stroke: #808080;
+}
+
+svg .selected-node, svg .selected-link, svg .highlighted-node, svg .highlighted-link, svg .path-link, svg .path-node {
+  opacity: 1 !important;
+}
+
+svg .selected-node > .node-text, svg .highlighted-node > .node-text, svg .path-node > .node-text {
+  fill: #ffffff;
+  font-weight: bold;
+}
+
+svg .disabled {
+  pointer-events: none;
+}
+
+svg .hull {
+  stroke-width: 100px;
+  stroke-linejoin: round;
+  opacity: 0.2;
+}
+
+svg .hull.node-over-cluster {
+  opacity: 0.6;
+}
+
+svg .intersection {
+  fill: none;
+}
+
+svg .error-link {
+  stroke: #E53030 !important;
+}
+
+svg .selected-path-link {
+  stroke: #0171AD !important;
+}

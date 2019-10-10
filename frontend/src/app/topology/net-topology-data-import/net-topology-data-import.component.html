@@ -1,0 +1,26 @@
+<clr-modal [(clrModalOpen)]="isImportModalOpen">
+  <h3 class="modal-title">Import Topology</h3>
+    <div class="modal-body">
+      <form class="form" #nodeForm="ngForm">
+        <section class="form-block">
+            <div class="form-group">
+              <label for="formatSelect">File format</label>
+              <div class="select">
+                <select id="formatSelect" name="format" [(ngModel)]="fileFormat">
+                  <option value="" disabled selected></option>
+                  <option value=".json">JSON</option>
+                  <option value=".xls,.xlsx">XLS</option>
+                </select>
+              </div>
+            </div>
+        </section>
+      </form>
+      <p class="inputfiles" [ngClass]="{'disabledFileInput': !fileFormat}">
+          <input #fileInput type="file" [disabled]="!fileFormat" (change)="selectFile($event)" placeholder="Upload file" [accept]="fileFormat">
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" (click)="closeImportTopologyModal();">Cancel</button>
+      <button class="btn btn-primary" [disabled]="!canImport" (click)="confirmButtonClicked()">Import</button>
+    </div>
+</clr-modal>

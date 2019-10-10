@@ -1,0 +1,133 @@
+{
+    "be": {
+        "checksum": "465ef516f3559fcfbba6651df1c8758776d05fe44c4dd0958796f21cf2f0da92",
+        "data": "{\"link\": {\"0e6d614f29744af4b43825ccda2dc63c\": {\"available_bandwidth\": 100, \"endpoints\": [[\"32ad5e0e86fb405db7adce674f58b1ae\", \"ETH_E3\"], [\"9563222f2cb94521aeab936baa62158d\", \"DEVICE-0\"]]}, \"1934184cd6ce46729ddd5f43cccbd776\": {\"available_bandwidth\": 1000, \"endpoints\": [[\"40a2b94013fe43449f07673c76adb832\", \"DEVICE-0\"], [\"58d3bd90127d4d3fb53399520e78ebe8\", \"ETH_D4\"]]}, \"1f413ecb25244c739860f7f0e1a49ee0\": {\"available_bandwidth\": 1000, \"endpoints\": [[\"142c658ee760474a803dbe2044af53a7\", \"ETH_D2\"], [\"f4e1f27e9de3420284cd1ddbe901323b\", \"ETH_D2\"]]}, \"256a1b6d17e645969098562f2d8cb4ee\": {\"available_bandwidth\": 1000, \"endpoints\": [[\"58d3bd90127d4d3fb53399520e78ebe8\", \"ETH_D2\"], [\"f4e1f27e9de3420284cd1ddbe901323b\", \"ETH_D1\"]]}, \"418a0907f8474ccf94a333465f19d9f7\": {\"available_bandwidth\": 1000, \"endpoints\": [[\"d18f424b96e440a19f60201aa37a3871\", \"DEVICE-0\"], [\"142c658ee760474a803dbe2044af53a7\", \"ETH_D4\"]]}, \"44f273292753458ab8c2ef1f3b2733f4\": {\"available_bandwidth\": 1000, \"endpoints\": [[\"32ad5e0e86fb405db7adce674f58b1ae\", \"ETH_D5\"], [\"84a28c4b89a841e5b3bc5fe862dc4ba1\", \"DEVICE-0\"]]}, \"50b9d3d5c2d345279c3ac6566a314c48\": {\"available_bandwidth\": 1000, \"endpoints\": [[\"142c658ee760474a803dbe2044af53a7\", \"ETH_D1\"], [\"f985e12fdb374445abbc80dbba57ca1e\", \"ETH_D2\"]]}, \"589c91f10fb64a98b3fab0b4606b3bb0\": {\"available_bandwidth\": 1000, \"endpoints\": [[\"3960a019d93b4468b0fc949fd20ef9e7\", \"DEVICE-0\"], [\"f4e1f27e9de3420284cd1ddbe901323b\", \"ETH_D5\"]]}, \"5aa1ccf2d3e14b539d893f0fedfb6846\": {\"available_bandwidth\": 1000, \"endpoints\": [[\"58d3bd90127d4d3fb53399520e78ebe8\", \"ETH_D1\"], [\"32ad5e0e86fb405db7adce674f58b1ae\", \"ETH_D2\"]]}, \"60891ab793e8418c9e1a9d7c0ce54b9b\": {\"available_bandwidth\": 1000, \"endpoints\": [[\"64f9b09054a946ff886febc81a6a4e4f\", \"DEVICE-0\"], [\"f4e1f27e9de3420284cd1ddbe901323b\", \"ETH_D4\"]]}, \"6a09d6af98d94f688275cc254e22df7f\": {\"available_bandwidth\": 1000, \"endpoints\": [[\"32ad5e0e86fb405db7adce674f58b1ae\", \"ETH_D6\"], [\"1b6be3349cb34346b9e75a8d9649283e\", \"DEVICE-0\"]]}, \"6e66e7f0444a40edaf52bd409916cefc\": {\"available_bandwidth\": 2500, \"endpoints\": [[\"f985e12fdb374445abbc80dbba57ca1e\", \"ETH_C2\"], [\"32ad5e0e86fb405db7adce674f58b1ae\", \"ETH_C2\"]]}, \"90aa16eef67447b6a1f2a0611e503108\": {\"available_bandwidth\": 1000, \"endpoints\": [[\"387477ae0082415fb957645c998aea5b\", \"DEVICE-0\"], [\"142c658ee760474a803dbe2044af53a7\", \"ETH_D3\"]]}, \"9acf198af28a43cfa2235e39bc55933b\": {\"available_bandwidth\": 1000, \"endpoints\": [[\"142c658ee760474a803dbe2044af53a7\", \"ETH_D5\"], [\"9d29c65af84c4af69dfb832423dd0e67\", \"DEVICE-0\"]]}, \"c76fa282533d4c89b1d7f21bdffe1017\": {\"available_bandwidth\": 2500, \"endpoints\": [[\"f985e12fdb374445abbc80dbba57ca1e\", \"ETH_C1\"], [\"e451eb2871014ed9966c5e12f1af47f4\", \"DEVICE-0\"]]}, \"cb5307baf20c46a2aef10b4f072e5471\": {\"available_bandwidth\": 1000, \"endpoints\": [[\"222d18c5009d4ea6a70bf01ffb8b6b38\", \"DEVICE-0\"], [\"58d3bd90127d4d3fb53399520e78ebe8\", \"ETH_D5\"]]}}, \"multicast_group\": {}, \"node\": {\"142c658ee760474a803dbe2044af53a7\": {\"IP\": \"192.168.80.12\", \"MAC\": \"02:00:00:80:00:12\", \"model\": \"SWMODEL1\", \"name\": \"East SW\", \"ports\": {\"ETH_A1\": {\"available_bandwidth\": 10000, \"port_bit\": 0, \"port_type\": \"10GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_A2\": {\"available_bandwidth\": 10000, \"port_bit\": 1, \"port_type\": \"10GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_B1\": {\"available_bandwidth\": 5000, \"port_bit\": 2, \"port_type\": \"5GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_B2\": {\"available_bandwidth\": 5000, \"port_bit\": 3, \"port_type\": \"5GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_C1\": {\"available_bandwidth\": 2500, \"port_bit\": 4, \"port_type\": \"2.5GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_C2\": {\"available_bandwidth\": 2500, \"port_bit\": 5, \"port_type\": \"2.5GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_D1\": {\"available_bandwidth\": 1000, \"port_bit\": 6, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D2\": {\"available_bandwidth\": 1000, \"port_bit\": 7, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D3\": {\"available_bandwidth\": 1000, \"port_bit\": 8, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D4\": {\"available_bandwidth\": 1000, \"port_bit\": 9, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D5\": {\"available_bandwidth\": 1000, \"port_bit\": 10, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D6\": {\"available_bandwidth\": 1000, \"port_bit\": 11, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E1\": {\"available_bandwidth\": 100, \"port_bit\": 12, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E2\": {\"available_bandwidth\": 100, \"port_bit\": 13, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E3\": {\"available_bandwidth\": 100, \"port_bit\": 14, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E4\": {\"available_bandwidth\": 100, \"port_bit\": 15, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E5\": {\"available_bandwidth\": 100, \"port_bit\": 16, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E6\": {\"available_bandwidth\": 100, \"port_bit\": 17, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E7\": {\"available_bandwidth\": 100, \"port_bit\": 18, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E8\": {\"available_bandwidth\": 100, \"port_bit\": 19, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}}, \"protocol\": \"ETH\", \"type\": \"SWITCH\"}, \"1b6be3349cb34346b9e75a8d9649283e\": {\"IP\": \"192.168.02.11\", \"MAC\": \"02:00:00:02:00:11\", \"model\": \"ETHMODEL1\", \"name\": \"N2\", \"ports\": {\"DEVICE-0\": {\"protocol\": \"ETH\"}}, \"protocol\": \"ETH\", \"type\": \"DEVICE\"}, \"222d18c5009d4ea6a70bf01ffb8b6b38\": {\"IP\": \"192.168.01.14\", \"MAC\": \"02:00:00:01:00:14\", \"model\": \"ETHMODEL1\", \"name\": \"W1\", \"ports\": {\"DEVICE-0\": {\"protocol\": \"ETH\"}}, \"protocol\": \"ETH\", \"type\": \"DEVICE\"}, \"32ad5e0e86fb405db7adce674f58b1ae\": {\"IP\": \"192.168.80.11\", \"MAC\": \"02:00:00:80:00:11\", \"model\": \"SWMODEL1\", \"name\": \"North SW\", \"ports\": {\"ETH_A1\": {\"available_bandwidth\": 10000, \"port_bit\": 0, \"port_type\": \"10GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_A2\": {\"available_bandwidth\": 10000, \"port_bit\": 1, \"port_type\": \"10GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_B1\": {\"available_bandwidth\": 5000, \"port_bit\": 2, \"port_type\": \"5GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_B2\": {\"available_bandwidth\": 5000, \"port_bit\": 3, \"port_type\": \"5GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_C1\": {\"available_bandwidth\": 2500, \"port_bit\": 4, \"port_type\": \"2.5GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_C2\": {\"available_bandwidth\": 2500, \"port_bit\": 5, \"port_type\": \"2.5GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_D1\": {\"available_bandwidth\": 1000, \"port_bit\": 6, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D2\": {\"available_bandwidth\": 1000, \"port_bit\": 7, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D3\": {\"available_bandwidth\": 1000, \"port_bit\": 8, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D4\": {\"available_bandwidth\": 1000, \"port_bit\": 9, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D5\": {\"available_bandwidth\": 1000, \"port_bit\": 10, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D6\": {\"available_bandwidth\": 1000, \"port_bit\": 11, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E1\": {\"available_bandwidth\": 100, \"port_bit\": 12, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E2\": {\"available_bandwidth\": 100, \"port_bit\": 13, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E3\": {\"available_bandwidth\": 100, \"port_bit\": 14, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E4\": {\"available_bandwidth\": 100, \"port_bit\": 15, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E5\": {\"available_bandwidth\": 100, \"port_bit\": 16, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E6\": {\"available_bandwidth\": 100, \"port_bit\": 17, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E7\": {\"available_bandwidth\": 100, \"port_bit\": 18, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E8\": {\"available_bandwidth\": 100, \"port_bit\": 19, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}}, \"protocol\": \"ETH\", \"type\": \"SWITCH\"}, \"387477ae0082415fb957645c998aea5b\": {\"IP\": \"192.168.01.12\", \"MAC\": \"02:00:00:01:00:12\", \"model\": \"ETHMODEL1\", \"name\": \"E1\", \"ports\": {\"DEVICE-0\": {\"protocol\": \"ETH\"}}, \"protocol\": \"ETH\", \"type\": \"DEVICE\"}, \"3960a019d93b4468b0fc949fd20ef9e7\": {\"IP\": \"192.168.02.13\", \"MAC\": \"02:00:00:02:00:13\", \"model\": \"ETHMODEL1\", \"name\": \"S2\", \"ports\": {\"DEVICE-0\": {\"protocol\": \"ETH\"}}, \"protocol\": \"ETH\", \"type\": \"DEVICE\"}, \"40a2b94013fe43449f07673c76adb832\": {\"IP\": \"192.168.02.14\", \"MAC\": \"02:00:00:02:00:14\", \"model\": \"ETHMODEL1\", \"name\": \"W2\", \"ports\": {\"DEVICE-0\": {\"protocol\": \"ETH\"}}, \"protocol\": \"ETH\", \"type\": \"DEVICE\"}, \"58d3bd90127d4d3fb53399520e78ebe8\": {\"IP\": \"192.168.80.14\", \"MAC\": \"02:00:00:80:00:14\", \"model\": \"SWMODEL1\", \"name\": \"West SW\", \"ports\": {\"ETH_A1\": {\"available_bandwidth\": 10000, \"port_bit\": 0, \"port_type\": \"10GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_A2\": {\"available_bandwidth\": 10000, \"port_bit\": 1, \"port_type\": \"10GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_B1\": {\"available_bandwidth\": 5000, \"port_bit\": 2, \"port_type\": \"5GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_B2\": {\"available_bandwidth\": 5000, \"port_bit\": 3, \"port_type\": \"5GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_C1\": {\"available_bandwidth\": 2500, \"port_bit\": 4, \"port_type\": \"2.5GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_C2\": {\"available_bandwidth\": 2500, \"port_bit\": 5, \"port_type\": \"2.5GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_D1\": {\"available_bandwidth\": 1000, \"port_bit\": 6, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D2\": {\"available_bandwidth\": 1000, \"port_bit\": 7, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D3\": {\"available_bandwidth\": 1000, \"port_bit\": 8, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D4\": {\"available_bandwidth\": 1000, \"port_bit\": 9, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D5\": {\"available_bandwidth\": 1000, \"port_bit\": 10, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D6\": {\"available_bandwidth\": 1000, \"port_bit\": 11, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E1\": {\"available_bandwidth\": 100, \"port_bit\": 12, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E2\": {\"available_bandwidth\": 100, \"port_bit\": 13, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E3\": {\"available_bandwidth\": 100, \"port_bit\": 14, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E4\": {\"available_bandwidth\": 100, \"port_bit\": 15, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E5\": {\"available_bandwidth\": 100, \"port_bit\": 16, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E6\": {\"available_bandwidth\": 100, \"port_bit\": 17, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E7\": {\"available_bandwidth\": 100, \"port_bit\": 18, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E8\": {\"available_bandwidth\": 100, \"port_bit\": 19, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}}, \"protocol\": \"ETH\", \"type\": \"SWITCH\"}, \"64f9b09054a946ff886febc81a6a4e4f\": {\"IP\": \"192.168.01.13\", \"MAC\": \"02:00:00:01:00:13\", \"model\": \"ETHMODEL1\", \"name\": \"S1\", \"ports\": {\"DEVICE-0\": {\"protocol\": \"ETH\"}}, \"protocol\": \"ETH\", \"type\": \"DEVICE\"}, \"84a28c4b89a841e5b3bc5fe862dc4ba1\": {\"IP\": \"192.168.03.11\", \"MAC\": \"02:00:00:03:00:11\", \"model\": \"ETHMODEL1\", \"name\": \"N3\", \"ports\": {\"DEVICE-0\": {\"protocol\": \"ETH\"}}, \"protocol\": \"ETH\", \"type\": \"DEVICE\"}, \"9563222f2cb94521aeab936baa62158d\": {\"IP\": \"192.168.01.11\", \"MAC\": \"02:00:00:01:00:11\", \"model\": \"ETHMODEL1\", \"name\": \"N1\", \"ports\": {\"DEVICE-0\": {\"protocol\": \"ETH\"}}, \"protocol\": \"ETH\", \"type\": \"DEVICE\"}, \"9d29c65af84c4af69dfb832423dd0e67\": {\"IP\": \"192.168.03.12\", \"MAC\": \"02:00:00:03:00:12\", \"model\": \"ETHMODEL1\", \"name\": \"E3\", \"ports\": {\"DEVICE-0\": {\"protocol\": \"ETH\"}}, \"protocol\": \"ETH\", \"type\": \"DEVICE\"}, \"d18f424b96e440a19f60201aa37a3871\": {\"IP\": \"192.168.02.12\", \"MAC\": \"02:00:00:02:00:12\", \"model\": \"ETHMODEL1\", \"name\": \"E2\", \"ports\": {\"DEVICE-0\": {\"protocol\": \"ETH\"}}, \"protocol\": \"ETH\", \"type\": \"DEVICE\"}, \"e451eb2871014ed9966c5e12f1af47f4\": {\"IP\": \"192.168.80.10\", \"MAC\": \"02:00:00:80:00:10\", \"model\": \"ETHMODEL1\", \"name\": \"Central Processing Unit\", \"ports\": {\"DEVICE-0\": {\"protocol\": \"ETH\"}}, \"protocol\": \"ETH\", \"type\": \"DEVICE\"}, \"f4e1f27e9de3420284cd1ddbe901323b\": {\"IP\": \"192.168.80.13\", \"MAC\": \"02:00:00:80:00:13\", \"model\": \"SWMODEL1\", \"name\": \"South SW\", \"ports\": {\"ETH_A1\": {\"available_bandwidth\": 10000, \"port_bit\": 0, \"port_type\": \"10GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_A2\": {\"available_bandwidth\": 10000, \"port_bit\": 1, \"port_type\": \"10GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_B1\": {\"available_bandwidth\": 5000, \"port_bit\": 2, \"port_type\": \"5GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_B2\": {\"available_bandwidth\": 5000, \"port_bit\": 3, \"port_type\": \"5GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_C1\": {\"available_bandwidth\": 2500, \"port_bit\": 4, \"port_type\": \"2.5GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_C2\": {\"available_bandwidth\": 2500, \"port_bit\": 5, \"port_type\": \"2.5GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_D1\": {\"available_bandwidth\": 1000, \"port_bit\": 6, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D2\": {\"available_bandwidth\": 1000, \"port_bit\": 7, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D3\": {\"available_bandwidth\": 1000, \"port_bit\": 8, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D4\": {\"available_bandwidth\": 1000, \"port_bit\": 9, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D5\": {\"available_bandwidth\": 1000, \"port_bit\": 10, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D6\": {\"available_bandwidth\": 1000, \"port_bit\": 11, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E1\": {\"available_bandwidth\": 100, \"port_bit\": 12, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E2\": {\"available_bandwidth\": 100, \"port_bit\": 13, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E3\": {\"available_bandwidth\": 100, \"port_bit\": 14, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E4\": {\"available_bandwidth\": 100, \"port_bit\": 15, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E5\": {\"available_bandwidth\": 100, \"port_bit\": 16, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E6\": {\"available_bandwidth\": 100, \"port_bit\": 17, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E7\": {\"available_bandwidth\": 100, \"port_bit\": 18, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E8\": {\"available_bandwidth\": 100, \"port_bit\": 19, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}}, \"protocol\": \"ETH\", \"type\": \"SWITCH\"}, \"f985e12fdb374445abbc80dbba57ca1e\": {\"IP\": \"192.168.80.15\", \"MAC\": \"02:00:00:80:00:15\", \"model\": \"SWMODEL1\", \"name\": \"Central SW\", \"ports\": {\"ETH_A1\": {\"available_bandwidth\": 10000, \"port_bit\": 0, \"port_type\": \"10GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_A2\": {\"available_bandwidth\": 10000, \"port_bit\": 1, \"port_type\": \"10GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_B1\": {\"available_bandwidth\": 5000, \"port_bit\": 2, \"port_type\": \"5GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_B2\": {\"available_bandwidth\": 5000, \"port_bit\": 3, \"port_type\": \"5GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_C1\": {\"available_bandwidth\": 2500, \"port_bit\": 4, \"port_type\": \"2.5GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_C2\": {\"available_bandwidth\": 2500, \"port_bit\": 5, \"port_type\": \"2.5GBASE-T\", \"protocol\": \"ETH\"}, \"ETH_D1\": {\"available_bandwidth\": 1000, \"port_bit\": 6, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D2\": {\"available_bandwidth\": 1000, \"port_bit\": 7, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D3\": {\"available_bandwidth\": 1000, \"port_bit\": 8, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D4\": {\"available_bandwidth\": 1000, \"port_bit\": 9, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D5\": {\"available_bandwidth\": 1000, \"port_bit\": 10, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_D6\": {\"available_bandwidth\": 1000, \"port_bit\": 11, \"port_type\": \"1000BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E1\": {\"available_bandwidth\": 100, \"port_bit\": 12, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E2\": {\"available_bandwidth\": 100, \"port_bit\": 13, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E3\": {\"available_bandwidth\": 100, \"port_bit\": 14, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E4\": {\"available_bandwidth\": 100, \"port_bit\": 15, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E5\": {\"available_bandwidth\": 100, \"port_bit\": 16, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E6\": {\"available_bandwidth\": 100, \"port_bit\": 17, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E7\": {\"available_bandwidth\": 100, \"port_bit\": 18, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}, \"ETH_E8\": {\"available_bandwidth\": 100, \"port_bit\": 19, \"port_type\": \"100BASE-T1\", \"protocol\": \"ETH\"}}, \"protocol\": \"ETH\", \"type\": \"SWITCH\"}}, \"traffic\": {\"212f0e0276654499be463e6af6e0d9a2\": {\"bandwidth\": 50, \"destination\": {\"address_method\": \"UNICAST\", \"device\": \"e451eb2871014ed9966c5e12f1af47f4\", \"port\": 50000}, \"max_jitter\": 10, \"max_latency\": 25, \"name\": \"N1UDP\", \"priority\": 6, \"protocol\": \"UDP\", \"source\": {\"device\": \"9563222f2cb94521aeab936baa62158d\", \"port\": 50000}, \"type\": \"IP\"}, \"535564474f3f4b47ad01ee747a2f8f63\": {\"bandwidth\": 350, \"destination\": {\"address_method\": \"UNICAST\", \"device\": \"e451eb2871014ed9966c5e12f1af47f4\", \"port\": 52000}, \"max_jitter\": 13, \"max_latency\": 33, \"name\": \"N3UDP\", \"priority\": 4, \"protocol\": \"UDP\", \"source\": {\"device\": \"84a28c4b89a841e5b3bc5fe862dc4ba1\", \"port\": 52000}, \"type\": \"IP\"}, \"8381eb85dbf141f6951556dd9b579b5a\": {\"bandwidth\": 50, \"destination\": {\"address_method\": \"UNICAST\", \"device\": \"e451eb2871014ed9966c5e12f1af47f4\", \"port\": 50000}, \"max_jitter\": 10, \"max_latency\": 25, \"name\": \"S1UDP\", \"priority\": 6, \"protocol\": \"UDP\", \"source\": {\"device\": \"64f9b09054a946ff886febc81a6a4e4f\", \"port\": 50000}, \"type\": \"IP\"}, \"8d325b49acb64072806848d3d083f2a9\": {\"bandwidth\": 160, \"destination\": {\"address_method\": \"UNICAST\", \"device\": \"e451eb2871014ed9966c5e12f1af47f4\", \"port\": 51000}, \"max_jitter\": 20, \"max_latency\": 50, \"name\": \"W2UDP\", \"priority\": 2, \"protocol\": \"UDP\", \"source\": {\"device\": \"40a2b94013fe43449f07673c76adb832\", \"port\": 51000}, \"type\": \"IP\"}, \"af2a662fef2642fc9f9751279ad5b01f\": {\"bandwidth\": 160, \"destination\": {\"address_method\": \"UNICAST\", \"device\": \"e451eb2871014ed9966c5e12f1af47f4\", \"port\": 51000}, \"max_jitter\": 20, \"max_latency\": 50, \"name\": \"E2UDP\", \"priority\": 2, \"protocol\": \"UDP\", \"source\": {\"device\": \"d18f424b96e440a19f60201aa37a3871\", \"port\": 51000}, \"type\": \"IP\"}, \"c5e29c1a21854b42855bc9609cb09559\": {\"bandwidth\": 160, \"destination\": {\"address_method\": \"UNICAST\", \"device\": \"e451eb2871014ed9966c5e12f1af47f4\", \"port\": 51000}, \"max_jitter\": 20, \"max_latency\": 50, \"name\": \"N2UDP\", \"priority\": 2, \"protocol\": \"UDP\", \"source\": {\"device\": \"1b6be3349cb34346b9e75a8d9649283e\", \"port\": 51000}, \"type\": \"IP\"}, \"d842132e0c6249898a11a3fcfe22601d\": {\"bandwidth\": 50, \"destination\": {\"address_method\": \"UNICAST\", \"device\": \"e451eb2871014ed9966c5e12f1af47f4\", \"port\": 50000}, \"max_jitter\": 10, \"max_latency\": 25, \"name\": \"W1UDP\", \"priority\": 6, \"protocol\": \"UDP\", \"source\": {\"device\": \"222d18c5009d4ea6a70bf01ffb8b6b38\", \"port\": 50000}, \"type\": \"IP\"}, \"e8570d6452554825b5f9e7e8181805ff\": {\"bandwidth\": 350, \"destination\": {\"address_method\": \"UNICAST\", \"device\": \"e451eb2871014ed9966c5e12f1af47f4\", \"port\": 52000}, \"max_jitter\": 13, \"max_latency\": 33, \"name\": \"E3UDP\", \"priority\": 4, \"protocol\": \"UDP\", \"source\": {\"device\": \"9d29c65af84c4af69dfb832423dd0e67\", \"port\": 52000}, \"type\": \"IP\"}, \"f34f934aefaa4c8bb6de214dd243bf26\": {\"bandwidth\": 50, \"destination\": {\"address_method\": \"UNICAST\", \"device\": \"e451eb2871014ed9966c5e12f1af47f4\", \"port\": 50000}, \"max_jitter\": 10, \"max_latency\": 25, \"name\": \"E1UDP\", \"priority\": 6, \"protocol\": \"UDP\", \"source\": {\"device\": \"387477ae0082415fb957645c998aea5b\", \"port\": 50000}, \"type\": \"IP\"}, \"f5d960ad4fbe4cc2aa7944a685f47339\": {\"bandwidth\": 160, \"destination\": {\"address_method\": \"UNICAST\", \"device\": \"e451eb2871014ed9966c5e12f1af47f4\", \"port\": 51000}, \"max_jitter\": 20, \"max_latency\": 50, \"name\": \"S2UDP\", \"priority\": 2, \"protocol\": \"UDP\", \"source\": {\"device\": \"3960a019d93b4468b0fc949fd20ef9e7\", \"port\": 51000}, \"type\": \"IP\"}}}"
+    },
+    "fe": {
+        "node": {
+            "142c658ee760474a803dbe2044af53a7": {
+                "x": 973.0687713623047,
+                "y": 290.9283447265625
+            },
+            "1b6be3349cb34346b9e75a8d9649283e": {
+                "x": 675.4141235351562,
+                "y": -34.746368408203125
+            },
+            "222d18c5009d4ea6a70bf01ffb8b6b38": {
+                "x": 261.7008056640625,
+                "y": 202.10794067382812
+            },
+            "32ad5e0e86fb405db7adce674f58b1ae": {
+                "x": 679.34619140625,
+                "y": 88.4178695678711
+            },
+            "387477ae0082415fb957645c998aea5b": {
+                "x": 1123.0455932617188,
+                "y": 170.1326141357422
+            },
+            "3960a019d93b4468b0fc949fd20ef9e7": {
+                "x": 577.8781127929688,
+                "y": 575.1535339355469
+            },
+            "40a2b94013fe43449f07673c76adb832": {
+                "x": 270.7492980957031,
+                "y": 353.69471740722656
+            },
+            "58d3bd90127d4d3fb53399520e78ebe8": {
+                "x": 386.40545654296875,
+                "y": 281.45416259765625
+            },
+            "64f9b09054a946ff886febc81a6a4e4f": {
+                "x": 758.7156066894531,
+                "y": 577.1195373535156
+            },
+            "84a28c4b89a841e5b3bc5fe862dc4ba1": {
+                "x": 526.1089782714844,
+                "y": 17.643757820129395
+            },
+            "9563222f2cb94521aeab936baa62158d": {
+                "x": 814.4339904785156,
+                "y": 13.152012407779694
+            },
+            "9d29c65af84c4af69dfb832423dd0e67": {
+                "x": 1123.4478759765625,
+                "y": 431.64544677734375
+            },
+            "d18f424b96e440a19f60201aa37a3871": {
+                "x": 1195.3754272460938,
+                "y": 295.83677673339844
+            },
+            "e451eb2871014ed9966c5e12f1af47f4": {
+                "x": 768.5458374023438,
+                "y": 375.7933654785156
+            },
+            "f4e1f27e9de3420284cd1ddbe901323b": {
+                "x": 673.4016723632812,
+                "y": 482.3778076171875
+            },
+            "f985e12fdb374445abbc80dbba57ca1e": {
+                "x": 676.5519409179688,
+                "y": 313.0270233154297
+            }
+        },
+        "link": {
+            "0e6d614f29744af4b43825ccda2dc63c": {
+                "isFlipped": false
+            },
+            "1934184cd6ce46729ddd5f43cccbd776": {
+                "isFlipped": false
+            },
+            "1f413ecb25244c739860f7f0e1a49ee0": {
+                "isFlipped": false
+            },
+            "256a1b6d17e645969098562f2d8cb4ee": {
+                "isFlipped": false
+            },
+            "418a0907f8474ccf94a333465f19d9f7": {
+                "isFlipped": false
+            },
+            "44f273292753458ab8c2ef1f3b2733f4": {
+                "isFlipped": false
+            },
+            "50b9d3d5c2d345279c3ac6566a314c48": {
+                "isFlipped": false
+            },
+            "589c91f10fb64a98b3fab0b4606b3bb0": {
+                "isFlipped": false
+            },
+            "5aa1ccf2d3e14b539d893f0fedfb6846": {
+                "isFlipped": false
+            },
+            "60891ab793e8418c9e1a9d7c0ce54b9b": {
+                "isFlipped": false
+            },
+            "6a09d6af98d94f688275cc254e22df7f": {
+                "isFlipped": false
+            },
+            "6e66e7f0444a40edaf52bd409916cefc": {
+                "isFlipped": false
+            },
+            "90aa16eef67447b6a1f2a0611e503108": {
+                "isFlipped": false
+            },
+            "9acf198af28a43cfa2235e39bc55933b": {
+                "isFlipped": false
+            },
+            "c76fa282533d4c89b1d7f21bdffe1017": {
+                "isFlipped": false
+            },
+            "cb5307baf20c46a2aef10b4f072e5471": {
+                "isFlipped": false
+            }
+        },
+        "transform": {
+            "translate": [
+                -43.318304363663856,
+                71.15222052694644
+            ],
+            "scale": [
+                0.8145075630702185
+            ]
+        }
+    }
+}

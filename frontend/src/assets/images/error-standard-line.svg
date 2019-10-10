@@ -1,0 +1,6 @@
+<svg version="1.1" width="36" height="36"  viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs><style>.cls-1{fill:#e53030} .cls-2{fill:#ffffff; stroke: #ffffff; stroke-width: 1px;}</style></defs>
+                <title>error-standard-line</title>
+                <circle cx="18" cy="18" r="18" class="cls-1"></circle><circle cx="18" cy="26.06" r="1.33" class="cls-2"></circle><path d="M18,22.61a1,1,0,0,1-1-1v-12a1,1,0,1,1,2,0v12A1,1,0,0,1,18,22.61Z" class="cls-2"></path>
+                <rect x="0" y="0" width="36" height="36" fill-opacity="0"/>
+            </svg>

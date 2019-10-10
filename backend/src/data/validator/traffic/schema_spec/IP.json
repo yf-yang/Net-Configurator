@@ -1,0 +1,127 @@
+{
+    "type": "object",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "traffic:IP",
+    "description": "Schema of a generic IP traffic.",
+    "additionalProperties": false,
+    "required": ["type", "destination"],
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Name of the traffic.",
+            "default": ""
+        },
+        "protocol": {
+            "type": "string",
+            "description": "L4 Protocol of the traffic.",
+            "enum": ["TCP", "UDP"],
+            "default": "TCP"
+        },
+        "type": {
+            "description": "Type of the traffic. It should be a form data argument `traffic_type` and not appear in the input payload JSON.",
+            "type": "string",
+            "enum": ["IP"]
+        },
+        "source": {
+            "type": "object",
+            "description": "Information of the source port.",
+            "additionalProperties": false,
+            "properties": {
+                "device": {
+                    "type": "string",
+                    "description": "ID of the source device.",
+                    "default": ""
+                },
+                "port": {
+                    "type": "integer",
+                    "description": "L4 port of the source device.",
+                    "minimum": -1,
+                    "maximum": 65535,
+                    "default": -1
+                }
+            },
+            "default": {
+                "device": "",
+                "port": -1
+            }
+        },
+        "destination": {
+            "oneOf": [
+                {
+                    "type": "object",
+                    "description": "Multicast traffic destination group.",
+                    "additionalProperties": false,
+                    "required": ["address_method"],
+                    "properties": {
+                        "address_method": {
+                            "type": "string",
+                            "description": "Communication pattern, either UNICAST or MULTICAST.",
+                            "enum": ["MULTICAST"]
+                        },
+                        "multicast_group": {
+                            "type": "string",
+                            "description": "Destination multicast group ID.",
+                            "default": ""
+                        },
+                        "port": {
+                            "type": "integer",
+                            "description": "L4 port of the destination multicast group.",
+                            "minimum": -1,
+                            "maximum": 65535,
+                            "default": -1
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "description": "Unicast traffic destination group.",
+                    "additionalProperties": false,
+                    "required": ["address_method"],
+                    "properties": {
+                        "address_method": {
+                            "type": "string",
+                            "description": "Communication pattern, either UNICAST or MULTICAST.",
+                            "enum": ["UNICAST"]
+                        },
+                        "device": {
+                            "type": "string",
+                            "description": "Destination unicast device ID.",
+                            "default": ""
+                        },
+                        "port": {
+                            "type": "integer",
+                            "description": "L4 port of the destination device.",
+                            "minimum": -1,
+                            "maximum": 65535,
+                            "default": -1
+                        }
+                    }
+                }
+            ]
+        },
+        "max_latency": {
+            "type": "integer",
+            "description": "Maximum allowable latency in milliseconds.",
+            "minimum": -1,
+            "default": -1
+        },
+        "max_jitter": {
+            "type": "integer",
+            "description": "Maximum allowable jitter in milliseconds.",
+            "minimum": -1,
+            "default": -1
+        },
+        "bandwidth": {
+            "type": "integer",
+            "description": "Bandwidth usage of the traffic in stable cases.",
+            "minimum": -1,
+            "default": -1
+        },
+        "priority": {
+            "type": "integer",
+            "description": "Priority of message from 0(highest) to 7.",
+            "minimum": 0,
+            "default": 0
+        }
+    }
+}

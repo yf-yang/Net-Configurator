@@ -1,0 +1,10 @@
+<clr-vertical-nav [clrVerticalNavCollapsible]="true">
+  <div class="nav-menu-subtitle">Elements</div>
+  <app-toolbar
+    *ngFor="let toolbar of genericToolbars"
+    [title]="toolbar.title"
+    [icon]="toolbar.icon"
+    [items]="toolbar.items"
+    id="tbe-{{toolbar.id}}">
+  </app-toolbar>
+</clr-vertical-nav>

@@ -1,0 +1,15 @@
+<clr-modal [(clrModalOpen)]="isNotificationDialogOpen" id="notif" [clrModalStaticBackdrop]="true" class="msg-{{messageSeverity}}">
+  <h3 class="modal-title">{{title | titlecase}}</h3>
+  <div class="modal-body">
+    <clr-alerts>
+      <clr-alert [clrAlertType]="messageSeverity" [clrAlertClosable]="false">
+          <div class="alert-item">
+              <span class="alert-text">
+                  {{messageText}}
+              </span>
+              <button id="compileBtn" type="button" class="btn btn-primary" (click)="compileToC()" *ngIf="isJSON && !isError">Compile to C</button>
+          </div>
+      </clr-alert>
+    </clr-alerts>
+  </div>
+</clr-modal>

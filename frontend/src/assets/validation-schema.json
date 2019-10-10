@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "netNodes": {
+            "type": "object",
+            "properties": {
+                "IP": {
+                    "type": "string"
+                },
+                "MAC": {
+                    "type": "string"
+                }
+            }
+        },
+        "netLinks": {
+            "type": "object",
+            "properties": {
+                "from": {
+                    "type": "string"
+                },
+                "to": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

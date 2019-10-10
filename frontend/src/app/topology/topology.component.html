@@ -1,0 +1,20 @@
+<app-topology-viz #topology
+                  (drop)="dropItem($event)"
+                  (dragover)="$event.preventDefault()"
+                  (nodeClicked)="onNodeClicked($event)"
+                  (linkClicked)="onLinkClicked($event)"
+                  (svgClicked)="onSvgClicked($event)"
+                  (transform)="onTransform($event)"
+                  (linkConnected)="onLinkConnected($event)"
+                  [isLoading]="isLoading"
+                  [ngClass]="{'dragging': isDragging}">
+</app-topology-viz>
+
+<div id="properties-panel"
+     #panel
+     (click)="setPositionFromRight()"
+     [ngClass]="{'opened': isOpenPropertiesPanel, 'dragging': appService.allowPropPanelResize}"
+     [ngStyle]="{'width': panelWidthStr, 'right': rightPosition}">
+  <div id="move-bar" (mousedown)="allowPanelResize($event)"></div>
+  <app-properties-panel *ngIf="isOpenPropertiesPanel"></app-properties-panel>
+</div>

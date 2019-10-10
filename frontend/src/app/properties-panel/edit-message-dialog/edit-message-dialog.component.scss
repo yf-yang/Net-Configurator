@@ -1,0 +1,42 @@
+.toolbar-items {
+  margin-right: 0;
+}
+
+.toolbar-items-h6 {
+  text-align: right;
+  margin-top: 0 !important;
+}
+
+.title-datagrid {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-top: 20px;
+  background-color: #2E2E2E;
+  border-radius: 3px;
+  min-height: 36px;
+}
+
+.title-datagrid h6 {
+  margin-top: 0 !important;
+  color: #808080;
+  font-family: CiscoSansTTRegular !important;
+  text-shadow: rgba(128,128,128,0.5) 0 0 1px;
+  line-height: 27px !important;
+}
+
+.title-datagrid h6.active {
+  color: #FFFFFF;
+}
+
+.btn {
+  color: #ffffff;
+  padding-right: 1.8px;
+}
+
+.btn:disabled clr-icon {
+  color: #161613;
+}
+
+h6 {
+  position: relative;
+}

@@ -1,0 +1,27 @@
+<div class="clr-row flex-items-xs-middle title-datagrid">
+  <div [ngClass]="{'clr-col-lg-8': areControlsShown(), 'clr-col-lg-12': !areControlsShown()}">
+    <h6 [ngClass]="{'active': active, 'collapsive': isCollapsive()}" (click)="toggleCollapse()">
+      <clr-icon *ngIf="isCollapsive()" shape="angle" class="collapse-caret" [ngClass]="{'opened': !collapsed}"></clr-icon>
+      {{title}}
+      <img class="error-icon" *ngIf="isError" src="/assets/images/error-standard-line.svg" width="16" height="16" alt="icon">
+    </h6>
+  </div>
+  <div [ngClass]="{'clr-col-lg-4': areControlsShown(), 'hidden': !areControlsShown()}">
+    <h6 class="toolbar-items-h6">
+      <div class="btn-group btn-primary btn-icon toolbar-items">
+        <button class="btn btn-link" [disabled]="!addProperty" (click)="newItemDialogOpen()" *ngIf="showAdd">
+          <clr-icon shape="plus"></clr-icon>
+          <span class="clr-icon-title">Add</span>
+        </button>
+        <button class="btn btn-link" [disabled]="!editProperty || disabledED" (click)="editItemDialogOpen()" *ngIf="showEdit">
+          <clr-icon shape="pencil" class="is-solid"></clr-icon>
+          <span class="clr-icon-title">Edit</span>
+        </button>
+        <button class="btn btn-link" [disabled]="!editProperty || disabledED" (click)="removeItem()" *ngIf="showDelete">
+          <clr-icon shape="trash" class="is-solid"></clr-icon>
+          <span class="clr-icon-title">Delete</span>
+        </button>
+      </div>
+    </h6>
+  </div>
+</div>

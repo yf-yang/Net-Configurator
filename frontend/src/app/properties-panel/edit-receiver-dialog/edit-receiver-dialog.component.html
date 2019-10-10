@@ -1,0 +1,33 @@
+<clr-modal [(clrModalOpen)]="isEditPropertiesDialogOpen" class="edit-modal">
+  <h3 class="modal-title">
+    <span class="title">
+      Edit Receiver
+      <span role="tooltip" aria-haspopup="true" class="tooltip tooltip-md">
+        <img class="error-icon" *ngIf="receivers && receivers.length === 0" src="/assets/images/error-standard-line.svg" width="21" height="21" alt="icon">
+        <span class="tooltip-content tooltip-network">No receivers defined</span>
+      </span>
+    </span>
+  </h3>
+  <div class="modal-body">
+    <form class="form" #nodeForm="ngForm">
+      <section class="form-block">
+        <clr-datagrid [(clrDgSelected)]="receivers" [clrDgRowSelection]="true" class="fullheight">
+          <clr-dg-column [clrDgField]="'id'">ID</clr-dg-column>
+          <clr-dg-column [clrDgField]="'label'">Name</clr-dg-column>
+          <clr-dg-column [clrDgField]="'IP'">IP</clr-dg-column>
+          <clr-dg-column [clrDgField]="'MssAC'">MAC</clr-dg-column>
+          <clr-dg-row *ngFor="let node of nodeArray" [clrDgItem]="node.label">
+            <clr-dg-cell>{{node.id}}</clr-dg-cell>
+            <clr-dg-cell>{{node.label}}</clr-dg-cell>
+            <clr-dg-cell>{{node.IP}}</clr-dg-cell>
+            <clr-dg-cell>{{node.MAC}}</clr-dg-cell>
+          </clr-dg-row>
+        </clr-datagrid>
+      </section>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-outline" (click)="dialogControl('close')">Cancel</button>
+    <button class="btn btn-primary" (click)="saveItem()" [disabled]="receivers && receivers.length === 0">Save</button>
+  </div>
+</clr-modal>

@@ -1,0 +1,99 @@
+<div class="clr-row">
+  <div class="clr-col-lg-7">
+    <h2 class="elementPropertyValue elementLabel">Link</h2>
+  </div>
+  <div class="clr-col-lg-5 text-right">
+    <button class="btn btn-icon btn-link" (click)="disableLink()">
+      <clr-icon shape="unlink" class="is-solid" *ngIf="!element.disabled"></clr-icon>
+      <clr-icon shape="link" class="is-solid" *ngIf="element.disabled"></clr-icon>
+    </button>
+    <button class="btn btn-icon btn-link" (click)="removeElement()">
+      <clr-icon shape="trash" class="is-solid"></clr-icon>
+    </button>
+  </div>
+</div>
+<div class="clr-row">
+  <div class="elementIcon clr-col-lg-4">
+    <img alt="icon" class="toolbar-item-icon" src="/assets/images/links/line.png">
+  </div>
+    <div class="elementInfo column clr-col-lg-8">
+      <div class="clr-row">
+        <div>
+          <span class="elementPropertyName">ID: </span>
+          <span class="elementPropertyValue">{{ element.id | textShorten:15 }}</span><br>
+          <span>
+            <span class="elementPropertyName">Endpoints: </span><br>
+            <span class="elementPropertyValue endpoint">{{ element.fromNodeObj.label }}</span><br>
+            <span class="elementPropertyValue endpoint">{{ element.toNodeObj.label }}</span><br>
+          </span>
+        </div>
+      </div>
+    </div>
+</div>
+
+<clr-tabs *ngIf="element.traffics.length">
+  <clr-tab *ngFor="let bw of element.traffics">
+    <button clrTabLink>{{bw.fromNode.label | textShorten:10 }} -&gt; {{ bw.toNode.label | textShorten:10 }}</button>
+      <clr-tab-content *clrIfActive>
+            <app-title-toolbox
+        [title]="'Bandwidth'"
+        [active]="true">
+      </app-title-toolbox>
+      <clr-datagrid>
+        <clr-dg-column>Current</clr-dg-column>
+        <clr-dg-column>Max</clr-dg-column>
+        <clr-dg-column>Utilization</clr-dg-column>
+
+        <clr-dg-row>
+          <clr-dg-cell>{{ bw.bandwidth | bandwidth }}</clr-dg-cell>
+          <clr-dg-cell>{{ element.speed | bandwidth }}</clr-dg-cell>
+          <clr-dg-cell>{{ getUtilisation(bw.bandwidth) }}%</clr-dg-cell>
+        </clr-dg-row>
+      </clr-datagrid>
+
+      <app-title-toolbox
+        [title]="'Messages'"
+        [active]="true">
+      </app-title-toolbox>
+      <clr-datagrid [(clrDgSelected)]="selectedTraffics"
+                    [clrDgRowSelection]="true"
+                    (clrDgSelectedChange)="onMessageClick()">
+        <clr-dg-column [clrDgField]="'message.name'">Name</clr-dg-column>
+        <clr-dg-column [clrDgField]="'message.srcNode.label'">Source</clr-dg-column>
+        <clr-dg-column [clrDgField]="'message.bandwidth'" [clrDgSortOrder]="descSort">Bandwidth</clr-dg-column>
+        <clr-dg-column [clrDgField]="'message.destination.port'">Port</clr-dg-column>
+        <clr-dg-column [clrDgField]="'message.destination.address_method'">Address Method</clr-dg-column>
+
+        <clr-dg-row *clrDgItems="let t of bw.traffic"
+          [clrDgItem]="t"
+          (mouseover)="onMessageHover(t.message.getSourceId(), t.message.getDestinationIds(), routes[t.message.id])"
+          (mouseout)="onMessageOut()"
+          [ngClass]="{'dg-row-error': t.message.isValidationError()}">
+          <clr-dg-cell>{{t.message.name | textShorten:10}}</clr-dg-cell>
+          <clr-dg-cell>{{t.message.srcNode ? t.message.srcNode.label : ''}}</clr-dg-cell>
+          <clr-dg-cell>{{t.message.bandwidth | bandwidth}}</clr-dg-cell>
+          <clr-dg-cell>{{t.message.destination.port}}</clr-dg-cell>
+          <clr-dg-cell>{{t.message.destination.address_method}}</clr-dg-cell>
+        </clr-dg-row>
+        <clr-dg-footer>Bandwidth: {{getSelectedBw() | bandwidth}} / {{getTotalBw(bw) | bandwidth}}</clr-dg-footer>
+      </clr-datagrid>
+
+      <div class="destinations" *ngIf="selectedTraffics && selectedTraffics.length > 0">
+        <app-title-toolbox
+          [title]="'Destinations'"
+          [active]="true">
+        </app-title-toolbox>
+        <clr-datagrid>
+          <clr-dg-column [clrDgField]="'label'">Name</clr-dg-column>
+          <clr-dg-column [clrDgField]="'IP'">IP</clr-dg-column>
+          <clr-dg-column [clrDgField]="'MAC'">MAC</clr-dg-column>
+          <clr-dg-row *clrDgItems="let node of messagesDestinations">
+            <clr-dg-cell>{{node.label}}</clr-dg-cell>
+            <clr-dg-cell>{{node.IP}}</clr-dg-cell>
+            <clr-dg-cell>{{node.MAC}}</clr-dg-cell>
+          </clr-dg-row>
+        </clr-datagrid>
+      </div>
+    </clr-tab-content>
+  </clr-tab>
+</clr-tabs>

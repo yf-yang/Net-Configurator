@@ -1,0 +1,6 @@
+Flask >= 0.12.2
+Flask-Cors >= 3.0.3
+pyyaml
+xlrd >= 1.2.0
+boltons >= 19.1.0
+flask-restplus >= 0.12.1

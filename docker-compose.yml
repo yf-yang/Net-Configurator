@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  backend:
+    build: backend
+    image: net-configurator:backend
+    command: /workspace/main.py
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/workspace
+      - ./log:/var/log
+      - /cache
+      - ./profile:/workspace/profile
+    environment:
+      FLASK_ENV: development
+      LOGLEVEL: DEBUG
+      # timezone
+      TZ: America/Los_Angeles
+
+  frontend:
+    build: frontend
+    image: net-configurator:frontend
+    volumes:
+      - './frontend:/workspace'
+      - '/workspace/node_modules'
+    ports:
+      - '4000:4000'
+      - '49153:49153'
+    # depends_on:
+    #   - backend

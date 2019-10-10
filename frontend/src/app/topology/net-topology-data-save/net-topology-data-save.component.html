@@ -1,0 +1,12 @@
+<clr-modal [(clrModalOpen)]="isSaveModalOpen">
+  <h3 class="modal-title">Save Topology</h3>
+    <div class="modal-body">
+        <p class="inputfiles">
+            <input #input type="text" name="fileName" placeholder="File name" [(ngModel)]="fileName">
+        </p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" (click)="closeSaveTopologyModal();">Cancel</button>
+      <button class="btn btn-primary" [disabled]="!fileName" (click)="confirmButtonClicked()">Save</button>
+    </div>
+</clr-modal>

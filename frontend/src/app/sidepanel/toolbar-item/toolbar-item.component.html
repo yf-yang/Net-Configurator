@@ -1,0 +1,9 @@
+<div class="clr-row flex-items-xs-center">
+  <div class="column flex-xs-bottom relative">
+    <img *ngIf="item.icon" src="{{ item.icon }}" alt="icon" class="toolbar-item-icon" [ngClass]="{'device': item.isDEVICE()}">
+    <span class="toolbar-device-label">
+      {{ item.isDEVICE() ? item.title.charAt(0) : '' }}
+    </span>
+    <div class="clr-row flex-items-xs-center item-title">{{ item.title }}</div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+.datagrid {
+  overflow-x: hidden !important;
+  margin-top: 2px !important;
+}
+
+.datagrid-header .datagrid-column {
+  border-right: 1px solid #000000 !important;
+}
+
+.datagrid-header .datagrid-column:last-child {
+  border: none !important;
+}
+
+.datagrid-header .datagrid-row {
+  border-bottom: 1px solid #000000 !important;
+}
+
+.datagrid-column-title, .datagrid-filter-toggle {
+  color: #ffffff !important;
+}
+
+.datagrid-column-separator {
+  display: none;
+}
+
+.datagrid-column-title {
+  font-weight: 400 !important;
+  font-size: 13px !important;
+  line-height: 14px !important;
+  font-family: CiscoSansTTRegular !important;
+}
+
+.datagrid-cell {
+  font-family: CiscoSansTTThin !important;
+}
+
+.datagrid-footer-description {
+  font-size: 12px;
+}
+
+// .datagrid-row .radio label::before {
+//   box-shadow: inset 0 0 0 8px #161613!important;
+//   border-color: #808080 !important;
+// }
+
+// .datagrid-row.datagrid-selected .radio label::before {
+//   box-shadow: inset 0 0px 0px 2.5px #000000 !important;
+//   border-color: #ffffff !important;
+//   border: 1px solid !important;
+// }
+
+// .datagrid-row .checkbox label::before {
+//   background: #161613 !important;
+//   border: 1px solid #808080 !important;
+// }
+
+// .datagrid-row.datagrid-selected .checkbox label::before {
+//   background: #0071AF !important;
+//   border: 1px solid #ffffff !important;
+// }
+
+// .datagrid-row.datagrid-selected .checkbox label::after, .datagrid-row .checkbox label::after {
+//   border-color: #ffffff !important;
+// }
+
+// .datagrid-row.dg-row-error .radio label::before {
+//   border-color: #E53030 !important;
+//   background-image: url('/assets/images/error-standard-line.svg') !important;
+//   background-size: 16px 16px;
+//   background-position: center;
+//   box-shadow: none !important;
+// }

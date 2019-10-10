@@ -1,0 +1,64 @@
+[
+  {
+    "id": "switch-node",
+    "title": "Switches",
+    "icon": "network-switch",
+    "items": [
+      {
+        "id": 1,
+        "title": "SWMODEL1",
+        "icon": "/assets/images/network-elements/switch.svg",
+        "createMethod": "createNode",
+        "nodeType": "SWITCH",
+        "model": "SWMODEL1"
+      },
+      {
+        "id": 0,
+        "title": "",
+        "icon": "",
+        "createMethod": ""
+      }
+    ]
+  },
+  {
+    "id": "generic-ethernet-device",
+    "title": "Devices",
+    "icon": "cpu",
+    "items": [
+      {
+        "id": 1,
+        "title": "ETHMODEL1",
+        "icon": "/assets/images/device/device.svg",
+        "createMethod": "createNode",
+        "nodeType": "DEVICE",
+        "model": "ETHMODEL1",
+        "traffics": ["IP"]
+      },
+      {
+        "id": 0,
+        "title": "",
+        "icon": "",
+        "createMethod": ""
+      }
+    ]
+  },
+  {
+    "id": "generic-link",
+    "title": "Links",
+    "icon": "link",
+    "items": [
+      {
+        "id": 1,
+        "title": "Link",
+        "icon": "/assets/images/links/line.png",
+        "createMethod": "createLink"
+      },
+      {
+        "id": 0,
+        "title": "",
+        "icon": "",
+        "createMethod": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,68 @@
+#prop-content {
+  overflow-y: auto;
+  height: 100%;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  background-color: #161613;
+  color:#FFFFFF;
+  border-color: #2E2E2E;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.elementIcon {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  padding-left: 30px;
+}
+
+.elementInfo {
+  font-weight: 600;
+  /* margin-top: 24px; */
+}
+
+.closeIcon {
+  cursor: pointer;
+}
+
+.elementPropertyName, .error-title {
+  font-weight: 400;
+  font-family: CiscoSansTTRegular !important;
+  font-size: 16px;
+}
+
+.elementPropertyValue {
+  font-family: CiscoSansTTThin !important;
+  font-size: 16px;
+  margin-top: 0;
+  font-weight: 200;
+}
+
+.elementLabel {
+  color: #ffffff;
+  font-size: 26px;
+  padding-left: 15px;
+}
+
+.error-list {
+  border: 1px solid #E53030;
+  background-color: #2E2E2E;
+  margin: 15px;
+}
+
+.error-list hr {
+  border-color: #979797;
+  border-width: 0.5px;
+}
+
+.error-title-wrap {
+  padding: 15px 0 5px 0;
+}
+
+.error-title, .error-item {
+  font-weight: 400;
+  font-family: CiscoSansTTRegular;
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

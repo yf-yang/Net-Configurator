@@ -1,0 +1,28 @@
+.toolbar-item-icon {
+  width: 45px;
+}
+
+.toolbar-item-icon.device {
+  width: 36px;
+}
+
+/* .toolbar-item-icon.sensor {
+  width: 49px;
+} */
+
+.toolbar-device-label {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 36px;
+  text-align: center;
+  font-size: 15px;
+  color: #ffffff;
+  pointer-events: none;
+  text-transform: uppercase;
+}
+
+.item-title {
+  font-size: 12px !important;
+  margin-top: 5px;
+}

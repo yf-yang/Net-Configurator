@@ -1,0 +1,983 @@
+{
+	"info": {
+		"_postman_id": "f30a4a85-9c45-40ee-8988-10eedbc221d4",
+		"name": "Net-Configurator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CRUD",
+			"item": [
+				{
+					"name": "GET All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Nodes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/node",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"node"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Links",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/link",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"link"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Traffic",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/traffic",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"traffic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Multicast Groups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/multicast_group",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"multicast_group"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create DEVICE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/node?node_type=DEVICE&model=ETHMODEL1",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"node"
+							],
+							"query": [
+								{
+									"key": "node_type",
+									"value": "DEVICE"
+								},
+								{
+									"key": "model",
+									"value": "ETHMODEL1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Link",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n\t{\r\n\t\t\"node\": \"fbab6b955ffe4e65bf387fc73a2a9e24\",\r\n\t\t\"port\": \"ETH_A6\"\r\n\t},\r\n\t{\r\n\t\t\"node\": \"cc9e08a85d4b493280913352142f8a92\",\r\n\t\t\"port\": \"DEVICE-0\"\r\n\t}\r\n]\r\n"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/links",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"links"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Traffic",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"destination\": {\r\n\t\t\"address_method\": \"UNICAST\"\r\n\t}\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/traffic?traffic_type=IP",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"traffic"
+							],
+							"query": [
+								{
+									"key": "traffic_type",
+									"value": "IP"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Multicast Group",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"devices\": [\"f300189684a74ba6942d82c170c4fea7\", \"94fa678c78bd43619c87bf9fc328d1e8\", \"a4bb9ea856094618997a3b6d235d2735\"]\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/multicast_group",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"multicast_group"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Traffic With Initial Parameters",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"destination\": {\n\t\t\"address_method\": \"UNICAST\"\n    },\n    \"name\": \"Name\",\n    \"source\": {\n        \"device\": \"b6c7e847eb3f4c3ea6429661341e232e\"\n    },\n    \"bandwidth\": 80\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/traffic?traffic_type=IP",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"traffic"
+							],
+							"query": [
+								{
+									"key": "traffic_type",
+									"value": "IP"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Multicast Traffic",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"destination\": {\n\t\t\"address_method\": \"MULTICAST\",\n\t\t\"multicast_group\": \"57916931823448cb9023aa911083a177\"\n    },\n    \"name\": \"A Multicast Traffic\",\n    \"source\": {\n        \"device\": \"b6c7e847eb3f4c3ea6429661341e232e\"\n    },\n    \"bandwidth\": 80\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/traffic?traffic_type=IP",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"traffic"
+							],
+							"query": [
+								{
+									"key": "traffic_type",
+									"value": "IP"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Node",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"changed_name\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/node/c6e0dc13dad14091bee13b6cbcc04c0a",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"node",
+								"c6e0dc13dad14091bee13b6cbcc04c0a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Node with Unknown Parameters",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"MYPARAMETER\": \"Some Value\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/node/c6e0dc13dad14091bee13b6cbcc04c0a",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"node",
+								"c6e0dc13dad14091bee13b6cbcc04c0a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Traffic",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"destination\": {\n            \"device\": \"982ad6bb1f964d0ebdb38178e3b6e2f3\"\n    },\n    \"name\": \"An AVB Traffic\",\n    \"source\": {\n        \"device\": \"b6c7e847eb3f4c3ea6429661341e232e\"\n    },\n    \"bandwidth\": 80\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/traffic/24f1514f168f4deba53a6c994f0e9c55",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"traffic",
+								"24f1514f168f4deba53a6c994f0e9c55"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Node",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/node/ecf2e17d96a84827824c1788adec115b",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"node",
+								"ecf2e17d96a84827824c1788adec115b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Traffics",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/traffic/33948e74530749eebd5ed1d02411f444",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"traffic",
+								"33948e74530749eebd5ed1d02411f444"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clear some parameters of a traffic",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"destination\": {\n            \"device\": null\n    },\n    \"name\": null,\n    \"source\": {\n        \"device\": null\n    }\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/traffic/936921cf2e3547dcbd43c6e5f631432a",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"traffic",
+								"936921cf2e3547dcbd43c6e5f631432a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Link",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/link/8fcab8e587e844bf93abdd6d341d4ff7",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"link",
+								"8fcab8e587e844bf93abdd6d341d4ff7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET default profile values",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/profile",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Create Read Update & Delete"
+		},
+		{
+			"name": "simulate",
+			"item": [
+				{
+					"name": "query a traffic",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/simulate/routes?traffic=09beb48066f7481996a41491114e8a51&method=UNICAST",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"simulate",
+								"routes"
+							],
+							"query": [
+								{
+									"key": "traffic",
+									"value": "09beb48066f7481996a41491114e8a51"
+								},
+								{
+									"key": "method",
+									"value": "UNICAST"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query a traffic on condition a link fails",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/simulate/routes?traffic=09beb48066f7481996a41491114e8a51&method=UNICAST&flink=8a44a6aae5fd4333a0d69983ee9014f7",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"simulate",
+								"routes"
+							],
+							"query": [
+								{
+									"key": "traffic",
+									"value": "09beb48066f7481996a41491114e8a51"
+								},
+								{
+									"key": "method",
+									"value": "UNICAST"
+								},
+								{
+									"key": "flink",
+									"value": "8a44a6aae5fd4333a0d69983ee9014f7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all traffic between a src and dst",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:5000/simulate/routes?src=e3fe6e12823b4450b060f53967dc46f9&method=UNICAST&flink=8a44a6aae5fd4333a0d69983ee9014f7&dst=8b64963919174e47b3936e4fdece85f6",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"simulate",
+								"routes"
+							],
+							"query": [
+								{
+									"key": "src",
+									"value": "e3fe6e12823b4450b060f53967dc46f9"
+								},
+								{
+									"key": "method",
+									"value": "UNICAST"
+								},
+								{
+									"key": "flink",
+									"value": "8a44a6aae5fd4333a0d69983ee9014f7"
+								},
+								{
+									"key": "dst",
+									"value": "8b64963919174e47b3936e4fdece85f6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all traffic from the same src",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:5000/simulate/routes?src=e3fe6e12823b4450b060f53967dc46f9&method=UNICAST",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"simulate",
+								"routes"
+							],
+							"query": [
+								{
+									"key": "src",
+									"value": "e3fe6e12823b4450b060f53967dc46f9"
+								},
+								{
+									"key": "method",
+									"value": "UNICAST"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all traffic given a failed node",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:5000/simulate/routes?src=e3fe6e12823b4450b060f53967dc46f9&method=UNICAST&fnode=16130e0fccdc424384245bf4a625f846",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"simulate",
+								"routes"
+							],
+							"query": [
+								{
+									"key": "src",
+									"value": "e3fe6e12823b4450b060f53967dc46f9"
+								},
+								{
+									"key": "method",
+									"value": "UNICAST"
+								},
+								{
+									"key": "fnode",
+									"value": "16130e0fccdc424384245bf4a625f846"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query bandwidth usage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:5000/simulate/bandwidth",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"simulate",
+								"bandwidth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query bandwidth usage on condition a link fails",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:5000/simulate/bandwidth?flink=8e444b322dea41029f8f108d9a404890",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"simulate",
+								"bandwidth"
+							],
+							"query": [
+								{
+									"key": "flink",
+									"value": "8e444b322dea41029f8f108d9a404890"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query bandwidth usage on condition a node fails",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:5000/simulate/bandwidth?fnode=ba823dc0b79c477c894c2dacb8f81554",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"simulate",
+								"bandwidth"
+							],
+							"query": [
+								{
+									"key": "fnode",
+									"value": "ba823dc0b79c477c894c2dacb8f81554"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "import",
+			"item": [
+				{
+					"name": "load an intermediate JSON",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"checksum\": \"465ef516f3559fcfbba6651df1c8758776d05fe44c4dd0958796f21cf2f0da92\",\n    \"data\": \"{\\\"link\\\": {\\\"0e6d614f29744af4b43825ccda2dc63c\\\": {\\\"available_bandwidth\\\": 100, \\\"endpoints\\\": [[\\\"32ad5e0e86fb405db7adce674f58b1ae\\\", \\\"ETH_E3\\\"], [\\\"9563222f2cb94521aeab936baa62158d\\\", \\\"DEVICE-0\\\"]]}, \\\"1934184cd6ce46729ddd5f43cccbd776\\\": {\\\"available_bandwidth\\\": 1000, \\\"endpoints\\\": [[\\\"40a2b94013fe43449f07673c76adb832\\\", \\\"DEVICE-0\\\"], [\\\"58d3bd90127d4d3fb53399520e78ebe8\\\", \\\"ETH_D4\\\"]]}, \\\"1f413ecb25244c739860f7f0e1a49ee0\\\": {\\\"available_bandwidth\\\": 1000, \\\"endpoints\\\": [[\\\"142c658ee760474a803dbe2044af53a7\\\", \\\"ETH_D2\\\"], [\\\"f4e1f27e9de3420284cd1ddbe901323b\\\", \\\"ETH_D2\\\"]]}, \\\"256a1b6d17e645969098562f2d8cb4ee\\\": {\\\"available_bandwidth\\\": 1000, \\\"endpoints\\\": [[\\\"58d3bd90127d4d3fb53399520e78ebe8\\\", \\\"ETH_D2\\\"], [\\\"f4e1f27e9de3420284cd1ddbe901323b\\\", \\\"ETH_D1\\\"]]}, \\\"418a0907f8474ccf94a333465f19d9f7\\\": {\\\"available_bandwidth\\\": 1000, \\\"endpoints\\\": [[\\\"d18f424b96e440a19f60201aa37a3871\\\", \\\"DEVICE-0\\\"], [\\\"142c658ee760474a803dbe2044af53a7\\\", \\\"ETH_D4\\\"]]}, \\\"44f273292753458ab8c2ef1f3b2733f4\\\": {\\\"available_bandwidth\\\": 1000, \\\"endpoints\\\": [[\\\"32ad5e0e86fb405db7adce674f58b1ae\\\", \\\"ETH_D5\\\"], [\\\"84a28c4b89a841e5b3bc5fe862dc4ba1\\\", \\\"DEVICE-0\\\"]]}, \\\"50b9d3d5c2d345279c3ac6566a314c48\\\": {\\\"available_bandwidth\\\": 1000, \\\"endpoints\\\": [[\\\"142c658ee760474a803dbe2044af53a7\\\", \\\"ETH_D1\\\"], [\\\"f985e12fdb374445abbc80dbba57ca1e\\\", \\\"ETH_D2\\\"]]}, \\\"589c91f10fb64a98b3fab0b4606b3bb0\\\": {\\\"available_bandwidth\\\": 1000, \\\"endpoints\\\": [[\\\"3960a019d93b4468b0fc949fd20ef9e7\\\", \\\"DEVICE-0\\\"], [\\\"f4e1f27e9de3420284cd1ddbe901323b\\\", \\\"ETH_D5\\\"]]}, \\\"5aa1ccf2d3e14b539d893f0fedfb6846\\\": {\\\"available_bandwidth\\\": 1000, \\\"endpoints\\\": [[\\\"58d3bd90127d4d3fb53399520e78ebe8\\\", \\\"ETH_D1\\\"], [\\\"32ad5e0e86fb405db7adce674f58b1ae\\\", \\\"ETH_D2\\\"]]}, \\\"60891ab793e8418c9e1a9d7c0ce54b9b\\\": {\\\"available_bandwidth\\\": 1000, \\\"endpoints\\\": [[\\\"64f9b09054a946ff886febc81a6a4e4f\\\", \\\"DEVICE-0\\\"], [\\\"f4e1f27e9de3420284cd1ddbe901323b\\\", \\\"ETH_D4\\\"]]}, \\\"6a09d6af98d94f688275cc254e22df7f\\\": {\\\"available_bandwidth\\\": 1000, \\\"endpoints\\\": [[\\\"32ad5e0e86fb405db7adce674f58b1ae\\\", \\\"ETH_D6\\\"], [\\\"1b6be3349cb34346b9e75a8d9649283e\\\", \\\"DEVICE-0\\\"]]}, \\\"6e66e7f0444a40edaf52bd409916cefc\\\": {\\\"available_bandwidth\\\": 2500, \\\"endpoints\\\": [[\\\"f985e12fdb374445abbc80dbba57ca1e\\\", \\\"ETH_C2\\\"], [\\\"32ad5e0e86fb405db7adce674f58b1ae\\\", \\\"ETH_C2\\\"]]}, \\\"90aa16eef67447b6a1f2a0611e503108\\\": {\\\"available_bandwidth\\\": 1000, \\\"endpoints\\\": [[\\\"387477ae0082415fb957645c998aea5b\\\", \\\"DEVICE-0\\\"], [\\\"142c658ee760474a803dbe2044af53a7\\\", \\\"ETH_D3\\\"]]}, \\\"9acf198af28a43cfa2235e39bc55933b\\\": {\\\"available_bandwidth\\\": 1000, \\\"endpoints\\\": [[\\\"142c658ee760474a803dbe2044af53a7\\\", \\\"ETH_D5\\\"], [\\\"9d29c65af84c4af69dfb832423dd0e67\\\", \\\"DEVICE-0\\\"]]}, \\\"c76fa282533d4c89b1d7f21bdffe1017\\\": {\\\"available_bandwidth\\\": 2500, \\\"endpoints\\\": [[\\\"f985e12fdb374445abbc80dbba57ca1e\\\", \\\"ETH_C1\\\"], [\\\"e451eb2871014ed9966c5e12f1af47f4\\\", \\\"DEVICE-0\\\"]]}, \\\"cb5307baf20c46a2aef10b4f072e5471\\\": {\\\"available_bandwidth\\\": 1000, \\\"endpoints\\\": [[\\\"222d18c5009d4ea6a70bf01ffb8b6b38\\\", \\\"DEVICE-0\\\"], [\\\"58d3bd90127d4d3fb53399520e78ebe8\\\", \\\"ETH_D5\\\"]]}}, \\\"multicast_group\\\": {}, \\\"node\\\": {\\\"142c658ee760474a803dbe2044af53a7\\\": {\\\"IP\\\": \\\"192.168.80.12\\\", \\\"MAC\\\": \\\"02:00:00:80:00:12\\\", \\\"model\\\": \\\"SWMODEL1\\\", \\\"name\\\": \\\"East SW\\\", \\\"ports\\\": {\\\"ETH_A1\\\": {\\\"available_bandwidth\\\": 10000, \\\"port_bit\\\": 0, \\\"port_type\\\": \\\"10GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_A2\\\": {\\\"available_bandwidth\\\": 10000, \\\"port_bit\\\": 1, \\\"port_type\\\": \\\"10GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_B1\\\": {\\\"available_bandwidth\\\": 5000, \\\"port_bit\\\": 2, \\\"port_type\\\": \\\"5GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_B2\\\": {\\\"available_bandwidth\\\": 5000, \\\"port_bit\\\": 3, \\\"port_type\\\": \\\"5GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_C1\\\": {\\\"available_bandwidth\\\": 2500, \\\"port_bit\\\": 4, \\\"port_type\\\": \\\"2.5GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_C2\\\": {\\\"available_bandwidth\\\": 2500, \\\"port_bit\\\": 5, \\\"port_type\\\": \\\"2.5GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D1\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 6, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D2\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 7, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D3\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 8, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D4\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 9, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D5\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 10, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D6\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 11, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E1\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 12, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E2\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 13, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E3\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 14, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E4\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 15, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E5\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 16, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E6\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 17, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E7\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 18, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E8\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 19, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}}, \\\"protocol\\\": \\\"ETH\\\", \\\"type\\\": \\\"SWITCH\\\"}, \\\"1b6be3349cb34346b9e75a8d9649283e\\\": {\\\"IP\\\": \\\"192.168.02.11\\\", \\\"MAC\\\": \\\"02:00:00:02:00:11\\\", \\\"model\\\": \\\"ETHMODEL1\\\", \\\"name\\\": \\\"N2\\\", \\\"ports\\\": {\\\"DEVICE-0\\\": {\\\"protocol\\\": \\\"ETH\\\"}}, \\\"protocol\\\": \\\"ETH\\\", \\\"type\\\": \\\"DEVICE\\\"}, \\\"222d18c5009d4ea6a70bf01ffb8b6b38\\\": {\\\"IP\\\": \\\"192.168.01.14\\\", \\\"MAC\\\": \\\"02:00:00:01:00:14\\\", \\\"model\\\": \\\"ETHMODEL1\\\", \\\"name\\\": \\\"W1\\\", \\\"ports\\\": {\\\"DEVICE-0\\\": {\\\"protocol\\\": \\\"ETH\\\"}}, \\\"protocol\\\": \\\"ETH\\\", \\\"type\\\": \\\"DEVICE\\\"}, \\\"32ad5e0e86fb405db7adce674f58b1ae\\\": {\\\"IP\\\": \\\"192.168.80.11\\\", \\\"MAC\\\": \\\"02:00:00:80:00:11\\\", \\\"model\\\": \\\"SWMODEL1\\\", \\\"name\\\": \\\"North SW\\\", \\\"ports\\\": {\\\"ETH_A1\\\": {\\\"available_bandwidth\\\": 10000, \\\"port_bit\\\": 0, \\\"port_type\\\": \\\"10GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_A2\\\": {\\\"available_bandwidth\\\": 10000, \\\"port_bit\\\": 1, \\\"port_type\\\": \\\"10GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_B1\\\": {\\\"available_bandwidth\\\": 5000, \\\"port_bit\\\": 2, \\\"port_type\\\": \\\"5GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_B2\\\": {\\\"available_bandwidth\\\": 5000, \\\"port_bit\\\": 3, \\\"port_type\\\": \\\"5GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_C1\\\": {\\\"available_bandwidth\\\": 2500, \\\"port_bit\\\": 4, \\\"port_type\\\": \\\"2.5GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_C2\\\": {\\\"available_bandwidth\\\": 2500, \\\"port_bit\\\": 5, \\\"port_type\\\": \\\"2.5GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D1\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 6, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D2\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 7, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D3\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 8, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D4\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 9, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D5\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 10, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D6\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 11, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E1\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 12, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E2\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 13, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E3\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 14, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E4\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 15, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E5\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 16, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E6\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 17, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E7\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 18, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E8\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 19, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}}, \\\"protocol\\\": \\\"ETH\\\", \\\"type\\\": \\\"SWITCH\\\"}, \\\"387477ae0082415fb957645c998aea5b\\\": {\\\"IP\\\": \\\"192.168.01.12\\\", \\\"MAC\\\": \\\"02:00:00:01:00:12\\\", \\\"model\\\": \\\"ETHMODEL1\\\", \\\"name\\\": \\\"E1\\\", \\\"ports\\\": {\\\"DEVICE-0\\\": {\\\"protocol\\\": \\\"ETH\\\"}}, \\\"protocol\\\": \\\"ETH\\\", \\\"type\\\": \\\"DEVICE\\\"}, \\\"3960a019d93b4468b0fc949fd20ef9e7\\\": {\\\"IP\\\": \\\"192.168.02.13\\\", \\\"MAC\\\": \\\"02:00:00:02:00:13\\\", \\\"model\\\": \\\"ETHMODEL1\\\", \\\"name\\\": \\\"S2\\\", \\\"ports\\\": {\\\"DEVICE-0\\\": {\\\"protocol\\\": \\\"ETH\\\"}}, \\\"protocol\\\": \\\"ETH\\\", \\\"type\\\": \\\"DEVICE\\\"}, \\\"40a2b94013fe43449f07673c76adb832\\\": {\\\"IP\\\": \\\"192.168.02.14\\\", \\\"MAC\\\": \\\"02:00:00:02:00:14\\\", \\\"model\\\": \\\"ETHMODEL1\\\", \\\"name\\\": \\\"W2\\\", \\\"ports\\\": {\\\"DEVICE-0\\\": {\\\"protocol\\\": \\\"ETH\\\"}}, \\\"protocol\\\": \\\"ETH\\\", \\\"type\\\": \\\"DEVICE\\\"}, \\\"58d3bd90127d4d3fb53399520e78ebe8\\\": {\\\"IP\\\": \\\"192.168.80.14\\\", \\\"MAC\\\": \\\"02:00:00:80:00:14\\\", \\\"model\\\": \\\"SWMODEL1\\\", \\\"name\\\": \\\"West SW\\\", \\\"ports\\\": {\\\"ETH_A1\\\": {\\\"available_bandwidth\\\": 10000, \\\"port_bit\\\": 0, \\\"port_type\\\": \\\"10GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_A2\\\": {\\\"available_bandwidth\\\": 10000, \\\"port_bit\\\": 1, \\\"port_type\\\": \\\"10GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_B1\\\": {\\\"available_bandwidth\\\": 5000, \\\"port_bit\\\": 2, \\\"port_type\\\": \\\"5GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_B2\\\": {\\\"available_bandwidth\\\": 5000, \\\"port_bit\\\": 3, \\\"port_type\\\": \\\"5GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_C1\\\": {\\\"available_bandwidth\\\": 2500, \\\"port_bit\\\": 4, \\\"port_type\\\": \\\"2.5GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_C2\\\": {\\\"available_bandwidth\\\": 2500, \\\"port_bit\\\": 5, \\\"port_type\\\": \\\"2.5GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D1\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 6, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D2\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 7, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D3\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 8, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D4\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 9, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D5\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 10, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D6\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 11, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E1\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 12, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E2\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 13, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E3\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 14, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E4\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 15, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E5\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 16, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E6\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 17, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E7\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 18, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E8\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 19, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}}, \\\"protocol\\\": \\\"ETH\\\", \\\"type\\\": \\\"SWITCH\\\"}, \\\"64f9b09054a946ff886febc81a6a4e4f\\\": {\\\"IP\\\": \\\"192.168.01.13\\\", \\\"MAC\\\": \\\"02:00:00:01:00:13\\\", \\\"model\\\": \\\"ETHMODEL1\\\", \\\"name\\\": \\\"S1\\\", \\\"ports\\\": {\\\"DEVICE-0\\\": {\\\"protocol\\\": \\\"ETH\\\"}}, \\\"protocol\\\": \\\"ETH\\\", \\\"type\\\": \\\"DEVICE\\\"}, \\\"84a28c4b89a841e5b3bc5fe862dc4ba1\\\": {\\\"IP\\\": \\\"192.168.03.11\\\", \\\"MAC\\\": \\\"02:00:00:03:00:11\\\", \\\"model\\\": \\\"ETHMODEL1\\\", \\\"name\\\": \\\"N3\\\", \\\"ports\\\": {\\\"DEVICE-0\\\": {\\\"protocol\\\": \\\"ETH\\\"}}, \\\"protocol\\\": \\\"ETH\\\", \\\"type\\\": \\\"DEVICE\\\"}, \\\"9563222f2cb94521aeab936baa62158d\\\": {\\\"IP\\\": \\\"192.168.01.11\\\", \\\"MAC\\\": \\\"02:00:00:01:00:11\\\", \\\"model\\\": \\\"ETHMODEL1\\\", \\\"name\\\": \\\"N1\\\", \\\"ports\\\": {\\\"DEVICE-0\\\": {\\\"protocol\\\": \\\"ETH\\\"}}, \\\"protocol\\\": \\\"ETH\\\", \\\"type\\\": \\\"DEVICE\\\"}, \\\"9d29c65af84c4af69dfb832423dd0e67\\\": {\\\"IP\\\": \\\"192.168.03.12\\\", \\\"MAC\\\": \\\"02:00:00:03:00:12\\\", \\\"model\\\": \\\"ETHMODEL1\\\", \\\"name\\\": \\\"E3\\\", \\\"ports\\\": {\\\"DEVICE-0\\\": {\\\"protocol\\\": \\\"ETH\\\"}}, \\\"protocol\\\": \\\"ETH\\\", \\\"type\\\": \\\"DEVICE\\\"}, \\\"d18f424b96e440a19f60201aa37a3871\\\": {\\\"IP\\\": \\\"192.168.02.12\\\", \\\"MAC\\\": \\\"02:00:00:02:00:12\\\", \\\"model\\\": \\\"ETHMODEL1\\\", \\\"name\\\": \\\"E2\\\", \\\"ports\\\": {\\\"DEVICE-0\\\": {\\\"protocol\\\": \\\"ETH\\\"}}, \\\"protocol\\\": \\\"ETH\\\", \\\"type\\\": \\\"DEVICE\\\"}, \\\"e451eb2871014ed9966c5e12f1af47f4\\\": {\\\"IP\\\": \\\"192.168.80.10\\\", \\\"MAC\\\": \\\"02:00:00:80:00:10\\\", \\\"model\\\": \\\"ETHMODEL1\\\", \\\"name\\\": \\\"Central Processing Unit\\\", \\\"ports\\\": {\\\"DEVICE-0\\\": {\\\"protocol\\\": \\\"ETH\\\"}}, \\\"protocol\\\": \\\"ETH\\\", \\\"type\\\": \\\"DEVICE\\\"}, \\\"f4e1f27e9de3420284cd1ddbe901323b\\\": {\\\"IP\\\": \\\"192.168.80.13\\\", \\\"MAC\\\": \\\"02:00:00:80:00:13\\\", \\\"model\\\": \\\"SWMODEL1\\\", \\\"name\\\": \\\"South SW\\\", \\\"ports\\\": {\\\"ETH_A1\\\": {\\\"available_bandwidth\\\": 10000, \\\"port_bit\\\": 0, \\\"port_type\\\": \\\"10GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_A2\\\": {\\\"available_bandwidth\\\": 10000, \\\"port_bit\\\": 1, \\\"port_type\\\": \\\"10GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_B1\\\": {\\\"available_bandwidth\\\": 5000, \\\"port_bit\\\": 2, \\\"port_type\\\": \\\"5GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_B2\\\": {\\\"available_bandwidth\\\": 5000, \\\"port_bit\\\": 3, \\\"port_type\\\": \\\"5GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_C1\\\": {\\\"available_bandwidth\\\": 2500, \\\"port_bit\\\": 4, \\\"port_type\\\": \\\"2.5GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_C2\\\": {\\\"available_bandwidth\\\": 2500, \\\"port_bit\\\": 5, \\\"port_type\\\": \\\"2.5GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D1\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 6, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D2\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 7, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D3\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 8, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D4\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 9, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D5\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 10, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D6\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 11, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E1\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 12, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E2\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 13, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E3\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 14, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E4\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 15, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E5\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 16, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E6\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 17, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E7\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 18, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E8\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 19, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}}, \\\"protocol\\\": \\\"ETH\\\", \\\"type\\\": \\\"SWITCH\\\"}, \\\"f985e12fdb374445abbc80dbba57ca1e\\\": {\\\"IP\\\": \\\"192.168.80.15\\\", \\\"MAC\\\": \\\"02:00:00:80:00:15\\\", \\\"model\\\": \\\"SWMODEL1\\\", \\\"name\\\": \\\"Central SW\\\", \\\"ports\\\": {\\\"ETH_A1\\\": {\\\"available_bandwidth\\\": 10000, \\\"port_bit\\\": 0, \\\"port_type\\\": \\\"10GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_A2\\\": {\\\"available_bandwidth\\\": 10000, \\\"port_bit\\\": 1, \\\"port_type\\\": \\\"10GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_B1\\\": {\\\"available_bandwidth\\\": 5000, \\\"port_bit\\\": 2, \\\"port_type\\\": \\\"5GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_B2\\\": {\\\"available_bandwidth\\\": 5000, \\\"port_bit\\\": 3, \\\"port_type\\\": \\\"5GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_C1\\\": {\\\"available_bandwidth\\\": 2500, \\\"port_bit\\\": 4, \\\"port_type\\\": \\\"2.5GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_C2\\\": {\\\"available_bandwidth\\\": 2500, \\\"port_bit\\\": 5, \\\"port_type\\\": \\\"2.5GBASE-T\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D1\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 6, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D2\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 7, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D3\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 8, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D4\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 9, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D5\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 10, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_D6\\\": {\\\"available_bandwidth\\\": 1000, \\\"port_bit\\\": 11, \\\"port_type\\\": \\\"1000BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E1\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 12, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E2\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 13, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E3\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 14, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E4\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 15, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E5\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 16, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E6\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 17, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E7\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 18, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}, \\\"ETH_E8\\\": {\\\"available_bandwidth\\\": 100, \\\"port_bit\\\": 19, \\\"port_type\\\": \\\"100BASE-T1\\\", \\\"protocol\\\": \\\"ETH\\\"}}, \\\"protocol\\\": \\\"ETH\\\", \\\"type\\\": \\\"SWITCH\\\"}}, \\\"traffic\\\": {\\\"212f0e0276654499be463e6af6e0d9a2\\\": {\\\"bandwidth\\\": 50, \\\"destination\\\": {\\\"address_method\\\": \\\"UNICAST\\\", \\\"device\\\": \\\"e451eb2871014ed9966c5e12f1af47f4\\\", \\\"port\\\": 50000}, \\\"max_jitter\\\": 10, \\\"max_latency\\\": 25, \\\"name\\\": \\\"N1UDP\\\", \\\"priority\\\": 6, \\\"protocol\\\": \\\"UDP\\\", \\\"source\\\": {\\\"device\\\": \\\"9563222f2cb94521aeab936baa62158d\\\", \\\"port\\\": 50000}, \\\"type\\\": \\\"IP\\\"}, \\\"535564474f3f4b47ad01ee747a2f8f63\\\": {\\\"bandwidth\\\": 350, \\\"destination\\\": {\\\"address_method\\\": \\\"UNICAST\\\", \\\"device\\\": \\\"e451eb2871014ed9966c5e12f1af47f4\\\", \\\"port\\\": 52000}, \\\"max_jitter\\\": 13, \\\"max_latency\\\": 33, \\\"name\\\": \\\"N3UDP\\\", \\\"priority\\\": 4, \\\"protocol\\\": \\\"UDP\\\", \\\"source\\\": {\\\"device\\\": \\\"84a28c4b89a841e5b3bc5fe862dc4ba1\\\", \\\"port\\\": 52000}, \\\"type\\\": \\\"IP\\\"}, \\\"8381eb85dbf141f6951556dd9b579b5a\\\": {\\\"bandwidth\\\": 50, \\\"destination\\\": {\\\"address_method\\\": \\\"UNICAST\\\", \\\"device\\\": \\\"e451eb2871014ed9966c5e12f1af47f4\\\", \\\"port\\\": 50000}, \\\"max_jitter\\\": 10, \\\"max_latency\\\": 25, \\\"name\\\": \\\"S1UDP\\\", \\\"priority\\\": 6, \\\"protocol\\\": \\\"UDP\\\", \\\"source\\\": {\\\"device\\\": \\\"64f9b09054a946ff886febc81a6a4e4f\\\", \\\"port\\\": 50000}, \\\"type\\\": \\\"IP\\\"}, \\\"8d325b49acb64072806848d3d083f2a9\\\": {\\\"bandwidth\\\": 160, \\\"destination\\\": {\\\"address_method\\\": \\\"UNICAST\\\", \\\"device\\\": \\\"e451eb2871014ed9966c5e12f1af47f4\\\", \\\"port\\\": 51000}, \\\"max_jitter\\\": 20, \\\"max_latency\\\": 50, \\\"name\\\": \\\"W2UDP\\\", \\\"priority\\\": 2, \\\"protocol\\\": \\\"UDP\\\", \\\"source\\\": {\\\"device\\\": \\\"40a2b94013fe43449f07673c76adb832\\\", \\\"port\\\": 51000}, \\\"type\\\": \\\"IP\\\"}, \\\"af2a662fef2642fc9f9751279ad5b01f\\\": {\\\"bandwidth\\\": 160, \\\"destination\\\": {\\\"address_method\\\": \\\"UNICAST\\\", \\\"device\\\": \\\"e451eb2871014ed9966c5e12f1af47f4\\\", \\\"port\\\": 51000}, \\\"max_jitter\\\": 20, \\\"max_latency\\\": 50, \\\"name\\\": \\\"E2UDP\\\", \\\"priority\\\": 2, \\\"protocol\\\": \\\"UDP\\\", \\\"source\\\": {\\\"device\\\": \\\"d18f424b96e440a19f60201aa37a3871\\\", \\\"port\\\": 51000}, \\\"type\\\": \\\"IP\\\"}, \\\"c5e29c1a21854b42855bc9609cb09559\\\": {\\\"bandwidth\\\": 160, \\\"destination\\\": {\\\"address_method\\\": \\\"UNICAST\\\", \\\"device\\\": \\\"e451eb2871014ed9966c5e12f1af47f4\\\", \\\"port\\\": 51000}, \\\"max_jitter\\\": 20, \\\"max_latency\\\": 50, \\\"name\\\": \\\"N2UDP\\\", \\\"priority\\\": 2, \\\"protocol\\\": \\\"UDP\\\", \\\"source\\\": {\\\"device\\\": \\\"1b6be3349cb34346b9e75a8d9649283e\\\", \\\"port\\\": 51000}, \\\"type\\\": \\\"IP\\\"}, \\\"d842132e0c6249898a11a3fcfe22601d\\\": {\\\"bandwidth\\\": 50, \\\"destination\\\": {\\\"address_method\\\": \\\"UNICAST\\\", \\\"device\\\": \\\"e451eb2871014ed9966c5e12f1af47f4\\\", \\\"port\\\": 50000}, \\\"max_jitter\\\": 10, \\\"max_latency\\\": 25, \\\"name\\\": \\\"W1UDP\\\", \\\"priority\\\": 6, \\\"protocol\\\": \\\"UDP\\\", \\\"source\\\": {\\\"device\\\": \\\"222d18c5009d4ea6a70bf01ffb8b6b38\\\", \\\"port\\\": 50000}, \\\"type\\\": \\\"IP\\\"}, \\\"e8570d6452554825b5f9e7e8181805ff\\\": {\\\"bandwidth\\\": 350, \\\"destination\\\": {\\\"address_method\\\": \\\"UNICAST\\\", \\\"device\\\": \\\"e451eb2871014ed9966c5e12f1af47f4\\\", \\\"port\\\": 52000}, \\\"max_jitter\\\": 13, \\\"max_latency\\\": 33, \\\"name\\\": \\\"E3UDP\\\", \\\"priority\\\": 4, \\\"protocol\\\": \\\"UDP\\\", \\\"source\\\": {\\\"device\\\": \\\"9d29c65af84c4af69dfb832423dd0e67\\\", \\\"port\\\": 52000}, \\\"type\\\": \\\"IP\\\"}, \\\"f34f934aefaa4c8bb6de214dd243bf26\\\": {\\\"bandwidth\\\": 50, \\\"destination\\\": {\\\"address_method\\\": \\\"UNICAST\\\", \\\"device\\\": \\\"e451eb2871014ed9966c5e12f1af47f4\\\", \\\"port\\\": 50000}, \\\"max_jitter\\\": 10, \\\"max_latency\\\": 25, \\\"name\\\": \\\"E1UDP\\\", \\\"priority\\\": 6, \\\"protocol\\\": \\\"UDP\\\", \\\"source\\\": {\\\"device\\\": \\\"387477ae0082415fb957645c998aea5b\\\", \\\"port\\\": 50000}, \\\"type\\\": \\\"IP\\\"}, \\\"f5d960ad4fbe4cc2aa7944a685f47339\\\": {\\\"bandwidth\\\": 160, \\\"destination\\\": {\\\"address_method\\\": \\\"UNICAST\\\", \\\"device\\\": \\\"e451eb2871014ed9966c5e12f1af47f4\\\", \\\"port\\\": 51000}, \\\"max_jitter\\\": 20, \\\"max_latency\\\": 50, \\\"name\\\": \\\"S2UDP\\\", \\\"priority\\\": 2, \\\"protocol\\\": \\\"UDP\\\", \\\"source\\\": {\\\"device\\\": \\\"3960a019d93b4468b0fc949fd20ef9e7\\\", \\\"port\\\": 51000}, \\\"type\\\": \\\"IP\\\"}}}\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/load",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"load"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "import from example xlsx",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": ""
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/import",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"import"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "export",
+			"item": [
+				{
+					"name": "dump an internal state",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/dump",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"dump"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "generate config files",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/generate",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"generate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "76e08125-9d42-4865-b720-39049ed24595",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "cd6f8c05-7e65-4e96-9f1b-2e760cdcba10",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "5292d081-f776-47f8-897f-270c7e5f4dad",
+			"key": "host",
+			"value": "http://localhost",
+			"type": "string"
+		},
+		{
+			"id": "5a72328b-e75a-49d3-b601-86c8b54b11e8",
+			"key": "port",
+			"value": "5000",
+			"type": "string"
+		}
+	]
+}
